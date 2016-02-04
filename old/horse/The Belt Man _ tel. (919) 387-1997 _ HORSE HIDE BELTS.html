@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.thebeltman.net/www/htdocs/horse.htm -->
+<html><script async="" src="./The Belt Man _ tel. (919) 387-1997 _ HORSE HIDE BELTS_files/analytics.js"></script><script>(function main() {
+    // Create enabled event
+    function fireEnabledEvent() {
+        // If gli exists, then we are already present and shouldn't do anything
+        if (!window.gli) {
+            setTimeout(function () {
+                var enabledEvent = document.createEvent("Event");
+                enabledEvent.initEvent("WebGLEnabledEvent", true, true);
+                document.dispatchEvent(enabledEvent);
+            }, 0);
+        } else {
+            //console.log("WebGL Inspector already embedded on the page - disabling extension");
+        }
+    };
+
+    // Grab the path root from the extension
+    document.addEventListener("WebGLInspectorReadyEvent", function (e) {
+        var pathElement = document.getElementById("__webglpathroot");
+        if (window["gliloader"]) {
+            gliloader.pathRoot = pathElement.innerText;
+        } else {
+            // TODO: more?
+            window.gliCssUrl = pathElement.innerText + "gli.all.css";
+        }
+    }, false);
+
+    // Rewrite getContext to snoop for webgl
+    var originalGetContext = HTMLCanvasElement.prototype.getContext;
+    if (!HTMLCanvasElement.prototype.getContextRaw) {
+        HTMLCanvasElement.prototype.getContextRaw = originalGetContext;
+    }
+    HTMLCanvasElement.prototype.getContext = function () {
+        var ignoreCanvas = this.internalInspectorSurface;
+        if (ignoreCanvas) {
+            return originalGetContext.apply(this, arguments);
+        }
+
+        var result = originalGetContext.apply(this, arguments);
+        if (result == null) {
+            return null;
+        }
+
+        var contextNames = ["moz-webgl", "webkit-3d", "experimental-webgl", "webgl", "3d"];
+        var requestingWebGL = contextNames.indexOf(arguments[0]) != -1;
+        if (requestingWebGL) {
+            // Page is requesting a WebGL context!
+            fireEnabledEvent(this);
+
+            // If we are injected, inspect this context
+            if (window.gli) {
+                if (gli.host.inspectContext) {
+                    // TODO: pull options from extension
+                    result = gli.host.inspectContext(this, result);
+                    // NOTE: execute in a timeout so that if the dom is not yet
+                    // loaded this won't error out.
+                    window.setTimeout(function() {
+                        var hostUI = new gli.host.HostUI(result);
+                        result.hostUI = hostUI; // just so we can access it later for debugging
+                    }, 0);
+                }
+            }
+        }
+
+        return result;
+    };
+})();</script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>The Belt Man | tel. (919) 387-1997 | HORSE HIDE BELTS</title>
+<meta name="Generator" content="EditPlus">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<link rel="STYLESHEET" type="text/css" href="./The Belt Man _ tel. (919) 387-1997 _ HORSE HIDE BELTS_files/tbm.css">
+
+<script language="javascript">
+
+// Function to 'activate' images.
+function imgOn(imgName) {
+        if (document.images) {
+            document[imgName].src = "images/" + imgName + "_h.gif";
+        }
+}
+
+// Function to 'deactivate' images.
+function imgOff(imgName) {
+        if (document.images) {
+            document[imgName].src = "images/" + imgName + ".gif";
+        }
+}
+
+function open_window (url){
+window.open(url,"win",'toolbar=1,location=1,directories=0,status=1,menubar=1,scrollbars=1,resizable=1,width=520,height=350');
+}
+
+function popUpbuckles(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=660,height=420,left = 160,top = 100');");
+}
+
+function popUpbuckles2(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=660,height=460,left = 160,top = 100');");
+}
+
+function popUphorse(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=670,height=400,left = 160,top = 100');");
+}
+
+function popUphorse2(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=670,height=450,left = 160,top = 100');");
+}
+
+function popUpvs(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=580,height=390,left = 160,top = 100');");
+}
+
+function popUpps(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=350,height=300,left = 160,top = 100');");
+}
+
+function popUpt(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=600,height=500,left = 160,top = 100');");
+}
+
+
+function validate_form(){
+    var elements = document.forms[0].elements;
+    var length = elements.length;
+   
+    for (var i = 0; i < length ; i++ ){
+       
+        with(elements.item(i)){
+            if (value==null||value==""||value=="Choose a Width"||value=="Choose a Color"||value=="Choose a Size"||value=="Choose a Buckle"){
+                alert("Please " + value + ".");
+                return false;
+            }
+        }   
+    }
+}
+
+
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-70936675-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body width="100%" border="0" style="border-collapse: collapse;">
+<center>
+<!-- T1 -->
+<table class="home1">
+	<tbody><tr style="background-color: #E9D880">
+		<td width="170px"><a href="http://www.thebeltman.net/www/htdocs/index.htm"><img src="./The Belt Man _ tel. (919) 387-1997 _ HORSE HIDE BELTS_files/bullheadsm.jpg" border="0"></a></td>
+		<td><p class="9b" style="margin: 0px 0px 4px 0px">PO Box 1302<br>
+		Apex, NC 27502-1302<br>
+		tel. (919) 387-1997<br>
+		<br>
+		</p><p style="margin: -10px 0px 4px 0px">
+			<script language="javascript">
+			<!-- // Javascript Email Address Encoder
+			var first = 'ma';
+			var second = 'il';
+			var third = 'to:';
+			var address = 'sales';
+			var domain = 'thebeltman';
+			var ext = 'net'; 
+			document.write('<a class="brown9bu" href="');
+			document.write(first+second+third);
+			document.write(address);
+			document.write('&#64;');
+			document.write(domain);
+			document.write('.');
+			document.write(ext);  
+			document.write('">'); 
+			document.write('click to email us</a>');
+			// -->
+			</script><a class="brown9bu" href="mailto:sales@thebeltman.net">click to email us</a>
+		</p><p class="USA"><br><strong>MADE IN THE USA</strong></p>
+		</td>
+		<td class="nopadding" style="text-align: right"><img src="./The Belt Man _ tel. (919) 387-1997 _ HORSE HIDE BELTS_files/tools3.jpg"></td>
+	</tr>
+</tbody></table>
+<!-- T2 -->
+<table class="home2">
+	<tbody><tr style="background-color: #C5AE65">
+		<td height="44px"><a href="https://www.cart32hostingred.com/cgi-bin/cart32.exe/thebeltman-itemlist" border="0"><img src="./The Belt Man _ tel. (919) 387-1997 _ HORSE HIDE BELTS_files/cart.gif"></a></td>
+		<td style="text-align: center"><p class="white"><strong>ANY QUESTIONS ABOUT YOUR ORDER?<br>Please read our <a class="whiteu" href="http://www.thebeltman.net/www/htdocs/faq.htm">Frequently Asked Questions</a></strong></p></td>
+		<td style="text-align: right"><a class="brown" href="http://www.thebeltman.net/www/htdocs/index.htm" border="0">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/sizing.htm" border="0">Sizing a Belt</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">Customer Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	</tr>
+</tbody></table>
+<table class="home3">
+	<tbody><tr valign="top">
+		<td width="170px">
+			<table style="background-color: #E9D880; border: solid 1 #432D16; border-collapse: collapse; margin: -1px 0px 0px 0px;">
+				<tbody><tr>
+					<td class="menuhead">SHOP PRODUCTS
+				</td></tr>
+				<tr>
+					<td class="menubody">
+					BELTS<br>
+						<p style="padding: 5px 0px 0px 10px">Dual-Layer Bullhide Belts:<br>
+						</p><p style="padding: 5px 0px 0px 20px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh114.htm" alt="1-1/4 inch Dual-Layer Bullhide Belts">1-1/4" Width Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 20px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh112.htm" alt="1-1/2 inch Dual-Layer Bullhide Belts">1-1/2" Width Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 20px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh134.htm" alt="1-3/4 inch Dual-Layer Bullhide Belts">1-3/4" Width Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/quick.htm" title="Quick Ship Belts">Quick Ship Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/nobuckle.htm" title="No-Buckle Belts">No-Buckle Belts</a><br>
+						</p><p class="rust" style="padding: 5px 0px 0px 10px">Horse Hide Belts<br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/impress.htm" title="Impression Belts">Impression Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/elephant.htm" title="Elephant Belts">Elephant Belts</a><br>
+						</p><p style="padding: 5px 0px 15px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/buckles.htm" title="Belt Buckles">Belt Buckles</a></p>
+					ACCESSORIES<br>
+						<p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/key.htm" alt="Key Hangers">Deluxe Key Hangers</a>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/pintsleeves.htm" alt="Pint Sleeves">Pint Sleeves</a>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/coasters.htm" alt="Coasters">Coasters</a>
+						</p><p style="padding: 5px 0px 15px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/preserve.htm" alt="Leather Preservative">Leather Preservative</a>
+					</p></td>
+				</tr>
+				<tr>
+					<td class="menuhead">LEARNING CENTER
+				</td></tr>
+				<tr>
+					<td class="menubody">
+					<p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/aboutb.htm" title="About Our Belts">About Our Belts</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/sizing.htm" title="Sizing a Belt">Sizing a Belt</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="boldred" href="http://www.thebeltman.net/www/htdocs/faq.htm" title="Frequently Asked Questions">Frequently Asked<br>Questions</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/testimonials.htm" title="Testimonials">Testimonials</a><br><br>
+					</p></td>
+				</tr>
+				<tr>
+					<td class="menuhead">COMPANY INFORMATION
+				</td></tr>
+				<tr>
+					<td class="menubody">
+					<p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/about.htm" title="About Us">About Us</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" title="Customer Service">Customer Service</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/order.htm" title="Ordering &amp; Shipping Info">Ordering &amp; Shipping Info</a><br><br>
+					</p></td>
+				</tr>
+			</tbody></table>
+		<p class="freeship">FREE SHIPPING!!</p>
+		<p class="freeship2">For all Pint Sleeves, Coasters, Buckles, Key Hangers, and Leather Treatment when ordered WITH a belt.</p>
+		<br>
+		<p class="made">SPECIAL ORERS</p>
+		<p class="made2">Don't see what you want here? Call us at 919-387-1997.<br>&nbsp;
+		</p></td>
+		<td colspan="2">
+			<!-- Table2 contains products photos & prices -->
+			<table width="635px">
+				<!-- tr1 -->
+				<tbody><tr>
+					<!-- Table2 spacer columns -->
+					<td width="300px" height="2px">&nbsp;</td>
+					<td width="335px">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center"><p class="warn">ORDERING A BELT?</p>
+					<p class="warn2">DO NOT order your waist size or pants size!<br>
+					<a class="red" href="http://www.thebeltman.net/www/htdocs/faq.htm"><strong>You MUST follow the measuring instructions before you order! Click here to read the FAQs!!!</strong></a><br>
+					Thanks, The Belt Man<br><br>
+					</p></td>
+				</tr>
+				<!-- products bullhide 1-1/4 inch -->
+				<tr valign="bottom">
+					<td class="cathead" colspan="2"><img src="./The Belt Man _ tel. (919) 387-1997 _ HORSE HIDE BELTS_files/horsehead.gif" border="0" alt="Horse Hide Belts, 1-1/4, 1-1/2, and 1-3/4 inch widths"></td>
+				</tr>
+				<tr valign="top">
+					<td class="deshead" width="300px"><a class="brown" href="javascript:popUphorse(&#39;horse4lg.htm&#39;)"><img src="./The Belt Man _ tel. (919) 387-1997 _ HORSE HIDE BELTS_files/horse4.jpg" border="0" alt="photo of single Horse Hide Belt"></a>
+					<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:popUphorse(&#39;horse4lg.htm&#39;)"><img src="./The Belt Man _ tel. (919) 387-1997 _ HORSE HIDE BELTS_files/viewlarger.jpg" border="0"></a>
+					<br><br>
+					Shown in the picture above: a 1.5" width SADDLE TAN belt with a square brass buckle.
+					<br><br><br>
+					<a class="brown" href="javascript:popUphorse2(&#39;horse2lg.htm&#39;)"><img src="./The Belt Man _ tel. (919) 387-1997 _ HORSE HIDE BELTS_files/horse2.jpg" border="0" alt="photo of multiple Horse Hide Belts"></a>
+					<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:popUphorse2(&#39;horse2lg.htm&#39;)"><img src="./The Belt Man _ tel. (919) 387-1997 _ HORSE HIDE BELTS_files/viewlarger.jpg" border="0"></a>
+					<br><br>
+					Shown L to R in picture above: UNDYED NATURAL, BROWN, CORDOVAN, and BLACK.
+					<br><br>
+					</td>
+					<td class="deshead2">
+					<form onsubmit="return validate_form()" action="https://www.cart32hostingred.com/cgi-bin/cart32.exe/thebeltman-additem" method="post" name="form4" id="form4"><br>
+						<table>
+							<tbody><tr>
+								<td class="options2"><p class="b">Width:<br>
+								</p><p>(1.25" = $79.95;<br>
+								&nbsp;1.5" = $99.95;<br>
+								&nbsp;1.75" = $119.95)</p></td>
+								<td class="options"><p>
+									<select name="p1" id="p1">
+									  <option value="Choose a Width" selected="">Choose a Width</option>
+									  <option value="1-1/4">1.25" (1-1/4")</option>
+									  <option value="1-1/2">1.5" (1-1/2")</option>
+									  <option value="1-3/4">1.75" (1-3/4")</option>
+									</select>
+									<input name="t1" type="hidden" id="t1" value="d-Width;1-1/4:price=79.95;1-1/2:price=99.95;1-3/4:price=119.95">
+								</p></td>
+							</tr>
+							<tr>
+								<td class="options"><p class="b">Color:</p></td>
+								<td class="options"><p class="7">
+									<select name="p2" id="p2">
+										<option value="Choose a Color" selected="">Choose a Color</option>
+										<option value="Saddle Tan">Saddle Tan</option>
+										<option value="Natural">Natural</option>
+										<option value="Brown">Brown</option>
+										<option value="Cordovan">Cordovan</option>
+										<option value="Black">Black</option>
+									</select>
+									<input name="t2" type="hidden" id="t2" value="d-Color;SaddleTan;Natural;Brown;Cordovan;Black">
+								</p></td>
+							</tr>
+							<tr>
+								<td class="options2"><p class="b">Size:<br>
+								</p><p class="7">all colors up to 42"</p></td>
+								<td class="options"><p>
+									<select name="p3" id="p3">
+									  <option value="Choose a Size" selected="">Choose a Size</option>
+									  <option value="29">29</option>
+									  <option value="30">30</option>
+									  <option value="31">31</option>
+									  <option value="32">32</option>
+									  <option value="33">33</option>
+									  <option value="34">34</option>
+									  <option value="35">35</option>
+									  <option value="36">36</option>
+									  <option value="37">37</option>
+									  <option value="38">38</option>
+									  <option value="39">39</option>
+									  <option value="40">40</option>
+									  <option value="41">41</option>
+									  <option value="42">42</option>
+<!--									  <option value="43">43</option>
+									  <option value="44">44</option>
+									  <option value="45">45</option>
+									  <option value="46">46</option>
+									  <option value="47">47</option>
+									  <option value="48">48</option>
+									  <option value="49">49</option>  -->
+									</select>
+									<input name="t3" type="hidden" id="t3" value="d-Size;29;30;31;32;33;34;35;36;37;38;39;40;41;42;">
+								</p></td>
+							</tr>
+							<tr>
+								<td class="options"><p class="b">Buckle:<br>
+								</p><p class="7">(see <a class="brownu" href="http://www.thebeltman.net/www/htdocs/buckles.htm">Buckles page</a><br>
+								for buckle options)</p></td>
+								<td class="options"><p>
+									<select name="p4" id="p4">
+									  <option value="Choose a Buckle" selected="">Choose a Buckle</option>
+									  <option value="null">========================</option>
+									  <option value="1.25SquareBlack">1.25" Square Black</option>
+									  <option value="1.25SquareBrass">1.25" Square Brass</option>
+									  <option value="1.25SquareChrome">1.25" Square Chrome</option>
+									  <option value="1.25RoundBlack">1.25" Round Black</option>
+									  <option value="1.25RoundBrass">1.25" Round Brass</option>
+									  <option value="1.25RoundChrome">1.25" Round Chrome</option>
+									  <option value="null">========================</option>
+									  <option value="1.5SquareBrass">1.5" Square Brass</option>
+									  <option value="1.5SquareChrome">1.5" Square Chrome</option>
+									  <option value="1.5SquareBlack">1.5" Square Black</option>
+									  <option value="1.5RoundBrass">1.5" Round Brass</option>
+									  <option value="1.5RoundChrome">1.5" Round Chrome</option>
+									  <option value="1.5RoundBlack">1.5" Round Black</option>
+									  <option value="null">========================</option>
+									  <option value="1.75SquareBrass">1.75" Square Brass</option>
+									  <option value="1.75SquareBlack">1.75" Square Black</option>
+									  <option value="1.75SlightlyRoundBlack">1.75" Slightly Round Black</option>
+									  <option value="1.75SquareChrome">1.75" Square Chrome</option>
+									</select>
+									<input name="t4" type="hidden" id="t4" value="d-Buckle;1.25SquareBlack:price=+0.00;1.25SquareBrass:price=+0.00;1.25SquareChrome:price=+0.00;1.25RoundBlack:price=+0.00;1.25RoundBrass:price=+0.00;1.25RoundChrome:price=+0.00;1.5SquareBrass:price=+0.00;1.5SquareChrome:price=+0.00;1.5SquareBlack:price=+0.00;1.5RoundBrass:price=+0.00;1.5RoundChrome:price=+0.00;1.5RoundBlack:price=+0.00;1.75SquareBrass:price=+0.00;1.75SquareBlack:price=+0.00;1.75SlightlyRoundBlack:price=+0.00;1.75SquareChrome:price=+0.00;">
+								</p></td>
+							</tr>
+							<tr>
+								<td class="options"><p class="b">Holes:</p></td>
+								<td class="options"><p>
+									<select name="p5" id="p5">
+									  <option value="5" selected="">5 holes, 1" apart</option>
+									  <option value="7">7 holes, ¾" apart</option>
+									</select>
+									<input name="t5" type="hidden" id="t5" value="d-Holes;5;7">
+								</p></td>
+							</tr>
+							<tr>
+								<td class="options"><p class="b">Velcro<sup>®</sup> brand Strip:<br>
+								</p><p class="7">(<a class="brownu" href="javascript:popUpvs(&#39;velcro.htm&#39;)">what's this?</a>)<br>
+								</p><p class="b">Internal Stiffener:&nbsp;&nbsp;<br>
+								</p><p class="7">(<a class="brownu" href="javascript:popUpps(&#39;stiff.htm&#39;)">what's this?</a>)</p></td>
+								<td class="options"><p>
+									<select name="p6" id="p6">
+									  <option value="No" selected="">No</option>
+									  <option value="Velcro">Yes Velcro® brand Strip (+$10)</option>
+									  <option value="Stiffener">Yes Internal Stiffener (+$10)</option>
+									</select>
+									<input name="t6" type="hidden" id="t6" value="d-Velcro or Stiffener;No:price=+0.00;Velcro:price=+10.00;Stiffener:price=+10.00">
+								</p></td>
+							</tr>
+							<tr>
+								<td class="options"><p class="b">Tapered:&nbsp;&nbsp;<br>
+								</p><p class="7">(<a class="brownu" href="javascript:popUpt(&#39;taper.htm&#39;)">what's this?</a>)<br>
+								<strong>(not available for&nbsp;&nbsp;&nbsp;<br>
+								1.25" belt)</strong></p></td>
+								<td class="options"><p>
+									<select name="p7" id="p7">
+									  <option value="No" selected="">No</option>
+									  <option value="NA">Not available for 1.25 inch belts</option>
+									  <option value="Yes">1.5" to 1.25" (+$15)</option>
+									  <option value="OK">1.75" to 1.5" (+$15)</option>
+									</select>
+									<input name="t7" type="hidden" id="t7" value="d-Tapered;No:price=+0.00;NA:price=+0.00;Yes:price=+15.00;OK:price=+15.00">
+								</p></td>
+							</tr>
+							<tr>
+								<td class="options"><p class="b">Quantity:</p></td>
+								<td class="options"><p>
+									<input name="qty" type="text" id="qty" value="1" size="2" maxlength="2">
+								</p></td>
+							</tr>
+							<tr>
+								<td valign="top" nowrap="">
+									<input name="Item" type="hidden" id="Item" value="Horse Belt">
+									<input type="submit" name="Submit" value="Add to Cart">
+									<input name="weight" type="hidden" id="weight" value="10">
+									<input name="Price" type="hidden" id="Price" value="0">
+								</td>
+							</tr>
+						</tbody></table>
+					</form>
+				</td></tr>
+				<tr>
+					<td class="deshead" colspan="2"><p>Horse hide is a denser material and thus it is more abrasion and moisture resistant. Because the leather is denser, this is the stiffest gun belt we make. The internal stiffener would rarely be necessary on a belt that is this stiff already. Horse hide also lends itself to a greater degree of sheen when polished. Many professionals appreciate the look, quality and durability of horse hide.<br><br>
+					<strong>CONSTRUCTION:</strong>
+					</p><p>Our horse hide belts are made in the same exacting manner as our other dual layer gun belts; that is, an outer layer of submersion dyed horse hide is mated to an un-dyed layer of 7oz. bull hide (see picture), and stitched together with heavy-duty nylon. The belt is then given an incredibly fine level of edge beveling and polishing, making the dual layer belt look like one piece of leather. The final waxing and hand buffing with lambs wool makes this a belt you will be proud to wear for many years to come! 
+					<br><br>
+					Horse hide belts are available in <strong>five</strong> colors: SADDLE TAN, UNDYED NATURAL, BROWN, CORDOVAN, and BLACK.
+					<br><br>
+					</p><p>REMEMBER: You MUST follow the measuring instructions as pictured in <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm">FAQ #2</a> before you call us to place your order.
+					<br><br>
+					For lengths longer than 42 inches, please call us at (919) 387-1997 for availability.
+					<br><br>
+					</p></td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+	<tr style="background-color: #C5AE65">
+		<td colspan="3" style="text-align: center; border: solid 1 #432D16;" height="75px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh114.htm" title="1-1/4 inch Dual-Layer Bullhide Belts">1-1/4" Bullhide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/bh112.htm" title="1-1/2 inch Dual-Layer Bullhide Belts">1-1/2" Bullhide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/bh134.htm" title="1-3/4 inch Dual-Layer Bullhide Belts">1-3/4" Bullhide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/quick.htm" title="Quick Ship Belts">Quick Ship Belts</a><br>
+		<a class="brown" href="http://www.thebeltman.net/www/htdocs/nobuckle.htm" title="No-Buckle Belts">No-Buckle Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<span style="color:#BC7646;">Horse Hide Belts</span>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/impress.htm" title="Impression Belts">Impression Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/elephant.htm" title="Elephant Belts">Elephant Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/buckles.htm" title="Belt Buckles">Buckles</a><br>
+		<a class="brown" href="http://www.thebeltman.net/www/htdocs/key.htm" title="Key Hangers">Key Hangers</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/pintsleeves.htm" title="Pint Sleeves">Pint Sleeves</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/coasters.htm" title="Coasters">Coasters</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/preserve.htm" title="Leather Preservative">Leather Preservative</a><br>
+		<a class="brown" href="http://www.thebeltman.net/www/htdocs/index.htm" border="0">HOME</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/sizing.htm" border="0">SIZING A BELT</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">CUSTOMER SERVICE</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">CONTACT US</a>
+		</td>
+	</tr>
+</tbody></table>
+<table width="820px">
+	<tbody><tr>
+		<td style="text-align: center"><br><a class="whiteu" href="http://www.w3des.com/" border="0" target="_blank">Website Designed and Developed by W3Design (www.w3des.com).</a></td>
+	</tr>
+</tbody></table>
+</center>
+
+
+</body></html>

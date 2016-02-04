@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0053)http://www.thebeltman.net/www/htdocs/testimonials.htm -->
+<html><script async="" src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ TESTIMONIALS_files/analytics.js"></script><script>(function main() {
+    // Create enabled event
+    function fireEnabledEvent() {
+        // If gli exists, then we are already present and shouldn't do anything
+        if (!window.gli) {
+            setTimeout(function () {
+                var enabledEvent = document.createEvent("Event");
+                enabledEvent.initEvent("WebGLEnabledEvent", true, true);
+                document.dispatchEvent(enabledEvent);
+            }, 0);
+        } else {
+            //console.log("WebGL Inspector already embedded on the page - disabling extension");
+        }
+    };
+
+    // Grab the path root from the extension
+    document.addEventListener("WebGLInspectorReadyEvent", function (e) {
+        var pathElement = document.getElementById("__webglpathroot");
+        if (window["gliloader"]) {
+            gliloader.pathRoot = pathElement.innerText;
+        } else {
+            // TODO: more?
+            window.gliCssUrl = pathElement.innerText + "gli.all.css";
+        }
+    }, false);
+
+    // Rewrite getContext to snoop for webgl
+    var originalGetContext = HTMLCanvasElement.prototype.getContext;
+    if (!HTMLCanvasElement.prototype.getContextRaw) {
+        HTMLCanvasElement.prototype.getContextRaw = originalGetContext;
+    }
+    HTMLCanvasElement.prototype.getContext = function () {
+        var ignoreCanvas = this.internalInspectorSurface;
+        if (ignoreCanvas) {
+            return originalGetContext.apply(this, arguments);
+        }
+
+        var result = originalGetContext.apply(this, arguments);
+        if (result == null) {
+            return null;
+        }
+
+        var contextNames = ["moz-webgl", "webkit-3d", "experimental-webgl", "webgl", "3d"];
+        var requestingWebGL = contextNames.indexOf(arguments[0]) != -1;
+        if (requestingWebGL) {
+            // Page is requesting a WebGL context!
+            fireEnabledEvent(this);
+
+            // If we are injected, inspect this context
+            if (window.gli) {
+                if (gli.host.inspectContext) {
+                    // TODO: pull options from extension
+                    result = gli.host.inspectContext(this, result);
+                    // NOTE: execute in a timeout so that if the dom is not yet
+                    // loaded this won't error out.
+                    window.setTimeout(function() {
+                        var hostUI = new gli.host.HostUI(result);
+                        result.hostUI = hostUI; // just so we can access it later for debugging
+                    }, 0);
+                }
+            }
+        }
+
+        return result;
+    };
+})();</script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Gun Belts by The Belt Man | tel. (919) 387-1997 | TESTIMONIALS</title>
+<meta name="Generator" content="EditPlus">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<link rel="STYLESHEET" type="text/css" href="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ TESTIMONIALS_files/tbm.css">
+
+<script language="javascript">
+
+// Function to 'activate' images.
+function imgOn(imgName) {
+        if (document.images) {
+            document[imgName].src = "images/" + imgName + "_h.gif";
+        }
+}
+
+// Function to 'deactivate' images.
+function imgOff(imgName) {
+        if (document.images) {
+            document[imgName].src = "images/" + imgName + ".gif";
+        }
+}
+
+function open_window (url){
+window.open(url,"win",'toolbar=1,location=1,directories=0,status=1,menubar=1,scrollbars=1,resizable=1,width=520,height=350');
+}
+
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-70936675-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body width="100%" border="0" style="border-collapse: collapse;">
+<center>
+<!-- T1 -->
+<table class="home1">
+	<tbody><tr style="background-color: #E9D880">
+		<td width="170px"><a href="http://www.thebeltman.net/www/htdocs/index.htm"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ TESTIMONIALS_files/bullheadsm.jpg" border="0" alt="Gun Belts by The Beltman"></a></td>
+		<td><p class="9b" style="margin: 0px 0px 4px 0px">PO Box 1302<br>
+		Apex, NC 27502-1302<br>
+		tel. (919) 387-1997<br>
+		<br>
+		</p><p style="margin: -10px 0px 4px 0px">
+			<script language="javascript">
+			<!-- // Javascript Email Address Encoder
+			var first = 'ma';
+			var second = 'il';
+			var third = 'to:';
+			var address = 'sales';
+			var domain = 'thebeltman';
+			var ext = 'net'; 
+			document.write('<a class="brown9bu" href="');
+			document.write(first+second+third);
+			document.write(address);
+			document.write('&#64;');
+			document.write(domain);
+			document.write('.');
+			document.write(ext);  
+			document.write('">'); 
+			document.write('click to email us</a>');
+			// -->
+			</script><a class="brown9bu" href="mailto:sales@thebeltman.net">click to email us</a>
+		</p><p class="USA"><br><strong>MADE IN THE USA</strong></p>
+		</td>
+		<td class="nopadding" style="text-align: right"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ TESTIMONIALS_files/tools3.jpg"></td>
+	</tr>
+</tbody></table>
+<!-- T2 -->
+<table class="home2">
+	<tbody><tr style="background-color: #C5AE65">
+		<td height="44px"><a href="https://www.cart32hostingred.com/cgi-bin/cart32.exe/thebeltman-itemlist" border="0"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ TESTIMONIALS_files/cart.gif"></a></td>
+		<td style="text-align: center"><p class="white"><strong>ANY QUESTIONS ABOUT YOUR ORDER?<br>Please read our <a class="whiteu" href="http://www.thebeltman.net/www/htdocs/faq.htm">Frequently Asked Questions</a></strong></p></td>
+		<td style="text-align: right"><a class="brown" href="http://www.thebeltman.net/www/htdocs/index.htm" border="0">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/sizing.htm" border="0">Sizing a Belt</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">Customer Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	</tr>
+</tbody></table>
+<table class="home3">
+	<tbody><tr valign="top">
+		<td width="170px">
+			<table style="background-color: #E9D880; border: solid 1 #432D16; border-collapse: collapse; margin: -1px 0px 0px 0px;">
+				<tbody><tr>
+					<td class="menuhead">SHOP PRODUCTS
+				</td></tr>
+				<tr>
+					<td class="menubody">
+					BELTS<br>
+						<p style="padding: 5px 0px 0px 10px">Dual-Layer Bullhide Belts:<br>
+						</p><p style="padding: 5px 0px 0px 20px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh114.htm" alt="1-1/4 inch Dual-Layer Bullhide Belts">1-1/4" Width Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 20px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh112.htm" alt="1-1/2 inch Dual-Layer Bullhide Belts">1-1/2" Width Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 20px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh134.htm" alt="1-3/4 inch Dual-Layer Bullhide Belts">1-3/4" Width Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/quick.htm" title="Quick Ship Belts">Quick Ship Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/nobuckle.htm" title="No-Buckle Belts">No-Buckle Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/horse.htm" title="Horse Hide Belts">Horse Hide Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/impress.htm" title="Impression Belts">Impression Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/elephant.htm" title="Elephant Belts">Elephant Belts</a><br>
+						</p><p style="padding: 5px 0px 15px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/buckles.htm" title="Belt Buckles">Belt Buckles</a></p>
+					ACCESSORIES<br>
+						<p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/key.htm" alt="Key Hangers">Deluxe Key Hangers</a>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/pintsleeves.htm" alt="Pint Sleeves">Pint Sleeves</a>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/coasters.htm" alt="Coasters">Coasters</a>
+						</p><p style="padding: 5px 0px 15px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/preserve.htm" alt="Leather Preservative">Leather Preservative</a>
+					</p></td>
+				</tr>
+				<tr>
+					<td class="menuhead">LEARNING CENTER
+				</td></tr>
+				<tr>
+					<td class="menubody">
+					<p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/aboutb.htm" title="About Our Belts">About Our Belts</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/sizing.htm" title="Sizing a Belt">Sizing a Belt</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="boldred" href="http://www.thebeltman.net/www/htdocs/faq.htm" title="Frequently Asked Questions">Frequently Asked<br>Questions</a><br>
+					</p><p class="rust" style="padding: 5px 0px 0px 10px">Testimonials<br><br>
+					</p></td>
+				</tr>
+				<tr>
+					<td class="menuhead">COMPANY INFORMATION
+				</td></tr>
+				<tr>
+					<td class="menubody">
+					<p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/about.htm" title="About Us">About Us</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" title="Customer Service">Customer Service</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/order.htm" title="Ordering &amp; Shipping Info">Ordering &amp; Shipping Info</a><br><br>
+					</p></td>
+				</tr>
+			</tbody></table>
+		<p class="freeship">FREE SHIPPING!!</p>
+		<p class="freeship2">For all Pint Sleeves, Coasters, Buckles, Key Hangers, and Leather Treatment when ordered WITH a belt.</p>
+		<br>
+		<p class="made">SPECIAL ORERS</p>
+		<p class="made2">Don't see what you want here? Call us at 919-387-1997.<br>&nbsp;
+		</p></td>
+		<td colspan="2">
+			<!-- Table2 contains text -->
+			<table width="635px">
+				<!-- tr1 -->
+				<tbody><tr>
+					<td style="padding: 10px">
+					<p class="warn">ORDERING A BELT?<br>
+					</p><p class="warn2">DO NOT order your waist size or pants size!<br>
+					<a class="red" href="http://www.thebeltman.net/www/htdocs/faq.htm"><strong>You MUST follow the measuring instructions before you order! Click here to read the FAQs!!!</strong></a><br>
+					Thanks, The Belt Man<br><br>
+					</p><p style="font-size: 9pt; font-weight: bold;">TESTIMONIALS</p>
+					<br>
+					<p>I have two Beltman gunbelts, one in brown and one in black. I have worn them with my carry holsters for a few years now. They are the best belts I have ever owned. Anyone carrying a handgun of any size and weight needs a belt from the Beltman. I have used my belts with all sizes of Glock, SIG, S&amp;W, Ruger, Single Action Army, Colt 1911 and other makes and models of handguns. I have carried those handguns in Crossbreed, Uncle Mikes, Blackhawk, Galco holsters and all work perfectly. <strong>These belts are simply the best and they won't roll over, fold or stretch when carrying a handgun all day after day. So save yourself embarrassment and discomfort from not carrying a handgun properly and get one these belts.</strong>
+					<br><br>
+					And I use the Obenauf Leather Preservative to keep the belts in perfect shape, be protected from rain and other environmental problems and they look like they'll last almost forever. <strong>As a retired Green Beret who served a few tours in combat I won't risk using any other gunbelt. After all why would I trade a Rolls Royce for a Yugo?</strong>
+					<br><br>
+					<em>Lt. Col. Jim Kennedy (Ret)</em>
+					<br><br><br>
+					</p><p>I am writing to thank you for the excellent work you have done. In order to extend the full measure of this compliment I need to explain a bit of background. Before I ordered a belt from you , I wore a good quality inside the waistband holster from crossbreed on a low end off the rack "gun belt" believing the advertisers claim that it was meant to support the weight of a medium to large size sidearm. <strong>The fact is "buy cheap, get cheap".</strong> I attempted to wear my large size semi auto in this rig and got back pain every day I did. <strong>I stuck it out for a year thinking I would toughen up but it did not improve.</strong>
+					<br><br>
+					Because of my professional experience as an orthopedic physical therapist I knew that the weak attachment point was shunting force to my spine. <strong>I decided to buy one of your belts</strong> and the stability change that it provides spares my spine the force application and over the day. <strong>The belt has been the best investment I have made in a long, long time.</strong> I wish I had bought your belt when I got my CHL and gun. <strong>No more back pain. it's not a mystery; it's good quality workmanship</strong> providing stabilization so that my spine doesn't have to hyper-compensate. Thank you very much sir.
+					<br><br>
+					<em>Gabriel Brooks, PT, DPT, MSPT, MTC, Orthopedic and Sports Physical Therapy</em>
+					<br><br><br>
+					</p><p>Just wanted to say thanks for the awesome belt. <strong>I initially thought $111.00 for a belt was a tad steep but once you see this belt and put it on you realize it's worth every penny - quality, fit, and finish are outstanding.</strong>
+					<br><br>
+					I've been playing with guns and gun-related gear going on 50 years and there have been very few products, over the years, that I have felt compelled to comment on. <strong>It's great to see that good old-fashioned values such as craftsmanship and quality are still alive in our society - nice work, keep it up!</strong>
+					<br><br>
+					This belt is now my go-to belt when my wife and I hit the town in our finest attire, and only the best belt, leather holster, and well-tuned 1911 fit the occasion.
+					<br><br>
+					<em>Marv Beneteau</em>
+					<br><br><br>
+					</p><p><strong>I just received my 1.5" horsehide belt and it is superb.</strong> Before, I was using a 1.5" Galco belt, which I imagine is cowhide. I used this to carry my HK P2000(about Glock 19 size service pistol) in a Custom Carry Concepts "Looper" appendix IWB holster. To conceal, I needed a polo or casual button-down shirt. <strong>With your stiffer horsehide belt, the holster pulls in the butt and top of the gun how it was designed to do, and my rig disappears underneath a t-shirt!</strong> I'm not talking about a baggy t-shirt either. In addition, because the rig is better supported than that Galco belt was able to do, it's infinitely more comfortable. I can barely tell I'm wearing a double-stack service handgun right now, it's amazing. A night and day difference.
+					<br><br>
+					In addition, <strong>this belt has a better quality finish than a horsehide dress belt I have from one of your competitors.</strong> I'm sold, and I've already begun raving to my friends. <strong>This was definitely worth the money.</strong>
+					<br><br>
+					<em>Tyler Smith</em>
+					<br><br><br>
+					</p><p>I just wanted to drop a quick line to you in regard to a belt I purchased from you about 4 years ago. At the time I was looking for a good quality belt I could carry my concealed carry weapon on and had gotten several recommendations for your product. Since then I have become a police officer and I must say that <strong>the belt is in the same condition as it was when I received it 4 years ago.</strong> I wear it every day and have found it to provide great support for my weapon in many circumstances.<br><br>
+					I just wanted to say that if one day this belt gets worn out and I am in need of another <strong>I will surely come to you for my next purchase.</strong> I was definitely wary of the cost of the belt but <strong>now understand that you get what you pay for and have found the quality to be top notch.</strong>
+					Thanks again and I look forward to my next purchase with you. <strong>However, at this rate, I probably won't need a new belt for another decade. :)</strong>
+					<br><br>
+					<em>Doug Seirup</em>
+					<br><br><br>
+					</p><p>I recently purchased an inch-and-three-quarter gun belt from you folks. I have worn it daily now for over a week. <strong>I have to say it is the best looking and most comfortable belt I have ever worn.</strong> I also ordered an inch-and-a-half tapered belt from the list enclosed with my original purchase. I received it today and it looks and feels just as great! I am a former Special Forces Medic (17 total years on an "A" Team) and Law Enforcement Officer and I prefer to carry a large frame semi-auto pistol. <strong>This belt eliminates  the discomfort and "sag" I experienced with other "gun belts" when carrying concealed.</strong> I also really appreciate quality and value. You have combined both into the best belt available. <strong>You can pay more for a belt, but you won't get better quality, no matter how much you pay. I want to thank you for providing a quality product made in America.</strong>
+					<br><br>
+					<em>Tony Bryant</em>
+					<br><br><br>
+					</p><p>Thanks for a great quality belt. <strong>My wife was skeptical about me purchasing this belt online for that kind of money. She could not believe the outstanding workmanship</strong> that went into it when I showed it to her the day it came, and she works for a large retail store. I've showed it to the guys at work and they too were very impressed. I was tired of always getting those wimpy belts that never last and <strong>wanted a good belt to have for years to come. Well sir, you delivered. I believe I received a GREAT belt.</strong> Thank you.
+					<br><br>
+					<em>Ed</em>
+					<br><br><br>
+					</p><p>I was skeptical about spending a lot for a belt 5 or 6 years ago, but I was in Apex, N.C. and got you to make me a belt. <strong>I have worn this belt for over 5 years now carrying a 12shot Sig Sauer pistol 365 days a year. It is still in perfect shape.</strong> The only way I'll ever get another belt is if I get you to make me another one of yours. I never knew it would be this comfortable. <strong>It's good to know you can still get a Quality American Made Product.</strong> Thank you.
+					<br><br>
+					<em>Raymond Rook</em>
+					<br><br><br>
+					</p><p>I came home from a road trip yesterday to find a package containing the brown and black horsehide belts I had recently ordered. <strong>What a pleasure it is to see such true quality, craftsmanship, and attention to detail still made in the USA.</strong> Sure, I spent about 3 to 5 times more than on any belt I've ever bought in the past, but it looks to me like <strong>I'm never going to have to replace these (unlike all the "bargain" belts I've bought)</strong>, so they're really going to work out to be the lowest overall cost over time.
+					<br><br>
+					You should be proud of what you're making, and it seems like you've found a nice little market niche. <strong>I'll definitely be recommending The Beltman to my friends, and knowing me, I'll be getting more belts myself.</strong> I wish you continued good luck and prosperity.
+					<br><br>
+					<em>David J. Stone</em>
+					<br><br><br>
+					</p><p>I received my belt today and I have one word that keeps going through my head as I wear my belt . . . . AWESOME! <strong>The fit is perfect, finish is perfect, and most of all, the comfort is fantastic.</strong> Well worth the wait, thank you for such an awesome product. You are truly a craftsman! For anyone that is considering a gun belt I can say they will not be disappointed. I ordered the horsehide with stiffener and yes it is a thick stiff belt but very comfortable and <strong>the support that this belt offers is bar none the best I have ever had. Supports my IWB holster and I don't even realize it is there.</strong> I sit, twist and up and down all day and this belt has been instantly comfortable and holds jeans and holster rock steady on my hips. I also ordered the matching horsehide key keeper, perfect addition. <strong>I consider this belt the perfect addition to my CCW equipment.</strong> Thanks for an AWESOME product!
+					<br><br>
+					<em>Dave Stewart</em>
+					<br><br><br>
+					</p><p>I received my new brown elephant 1.5 inch gun belt last night. <strong>WOW! Beautiful craftsmanship! I was really impressed with the quality of the belt.</strong> I had heard some good feedback on your belts prior to ordering my belt, but after seeing the belt up close, <strong>I have to say your reputation for quality gun belts is definitely understated.</strong> I will be ordering more belts from your business and sharing this with my shooting buds. Great work and I'm proud to wear it!
+					<br><br>
+					<em>Larry Krohmer</em>
+					<br><br><br>
+					As the saying goes, "My tastes are simple; I like the very best," and once in a while I like to give myself a treat. <strong>Some time ago I ordered two of your elephant hide belts in spite of the cost. They are wonderful. The quality is tops and their appearance improves with wear.</strong> The elephant grain has some depth and as the belts are worn, the top of the grain takes on a little sheen which would be hard to equal any other way. <strong>It seems the belts will last forever in my use. I'm glad I spent the money and can recommend your products to anyone.</strong>
+					<br><br>
+					<em>Ed Barnes</em>
+					<br><br><br>
+					My belt came in today, and <strong>I am pleased beyond words with your product and your craftsmanship</strong>. I have tried several other brands, and nobody else even comes close. Your <strong>outstanding product and customer service will have me coming back soon and often</strong>. Thanks for an incredible value, and please know I'll be spreading the word!
+					<br><br>
+					<em>Brooks Adams</em>
+					<br><br><br>
+					I've been wearing your belts for the last 2 weeks. Finally I am able to keep my pants up comfortably. While the belt is much more stiff (as you point out) than others, <strong>it is that extra stiffness that provides the comfort for me, and security for my holster&nbsp;.&nbsp;.&nbsp;. and all at a reasonable price.</strong> Thanks so much for a QUALITY product. <strong>Your attention to detail is appreciated in this world of cheap mass production.</strong> I'll be ordering more in the future.
+					<br><br>
+					<em>Tom Gillan</em>
+					<br><br><br>
+					<strong>New people on Glock Talk often ask if they should spring for a Belt Man belt. I always respond with a resounding, "Hell yeah!". I never knew how good a belt could be until I tried yours.</strong>
+					<br><br>
+					I could spend $30 on other belts, replacing them twice a year, or I can spend $80 to $100 on a belt and never worry about it again. I carry an all steel 1911 government model, which would wear out an inferior belt in no time.
+					<br><br>
+					Thanks for offering such a good product.
+					<br><br>
+					<em>Chad Landry (just a guy who appreciates fine craftsmanship)</em>
+					<br><br><br>
+					First I want to <strong>thank all of you folks for creating what may be the BEST belt I have ever owned</strong>. I received my belt on Tuesday and have used it for IWB, OWB, and no carry. I have never had a belt that was <strong>so comfortable and supportive of all manner of carry, or not</strong> (Smith .357 Model 66, Colt .45 ACP CCO Gunsite, Smith 1911sc; I carry one of them everyday).
+					<br><br>
+					I want to let you know that ALL my Christmas "pennies" received as gifts will be put toward a second belt in brown.<br><br>
+					<em>Sal Crivello</em>
+					<br><br><br>
+					I just received my 1-1/2" horsehide belt this past Friday. All I can say is you have <strong>truly exceeded my expectations</strong> many times over. The <strong>attention to detail and craftsmanship</strong> on this belt is incredible. I wore my Sig 228 OWB all day Saturday and it was bliss not to have the weapon shift, sag or slide, but to <strong>stay exactly where it was originally placed</strong>. This is the first, but certainly not my last belt that I will be ordering from you.<br><br>
+					<em>Ernie Troquille</em>
+					<br><br><br>
+					I received my belt the other day and <strong>I cannot get over how nice it is</strong>. I hang it in my closet next to the other belts I own and it overshadows those other belts in every way. I ordered a 1 1/4 standard black belt. It is so nice that <strong>I wear it even while I am not carrying a weapon. It truly shines though when I am carry my IWB holstered Glock 22.</strong>  The weapon never moved after a full day of walking, driving and even going to the movies. The quality is unmatched and it was very much worth the wait. I was impressed right away by your website. Your tips on how to size it properly were dead-on and easy to abide by. The belt is <strong>dressy enough to be worn with my suits or with jeans</strong>. I love the versatility it provides. I wanted to drop you this note to say thanks and that I will forever recommend you to everyone I know. Thanks again.<br><br>
+					<em>Jay Bopp</em>
+					<br><br><br>
+					I just wanted to thank you for the high-quality belts which arrived in the mail this past weekend. Without a doubt, <strong>these are the highest quality belts I have seen</strong> in the market place and the <strong>best I have ever purchased</strong>. That, together with your <strong>great service has made me a customer for life</strong>. Next, I think I'm going with a 1 1/4" horsehide belt. You should be getting the order from me soon. Also, I've recommended you to a couple friends. Hopefully they'll be placing orders soon too. Thanks and best regards.<br><br>
+					<em>Fred Delibero</em>
+					<br><br><br>
+					I had heard about the "wonders of" horsehide leather gear for years, after acquiring a Beltman horse hide belt I now know what all the clamour is about. This belt is as rigid as a good riggers belt and <strong>looks in place with a Brooks Bro's suit, as well as a pair of jeans</strong>. Darn good kit!!!!!!!!!<br><br>
+					<strong>If you don't have one, GET ONE!!!!!!!!!!!</strong><br><br>
+					<em>G K McCleary</em>
+					<br><br><br>
+					It has been several months since I received my black 1.25-inch bullhide belt from you and I just wanted to let you know that it is <strong>one of the nicest belts that I've ever owned</strong>. As someone who has carried a concealed pistol daily for most of my adult life, I truly appreciate the <strong>detail and attention that goes into your belts</strong>.<br><br>
+					As a trainer, I see all sorts of gear in classes and I tend to work the hell out of my personal gear. Your <strong>work is topnotch and your pricing represents a phenomenal deal</strong> for the knowledgable consumer. When I first showed up to teach a class wearing your belt, my colleague laughed because he was used to seeing my old beatup 1.75-inch Wilderness belt. After two and a half days of some pretty rigorous force-on-force work, during which time several peices of carry gear were destroyed, <strong>your belt still looked as it had when I first received it</strong>.<br><br>
+					<em>Take care, Paul Gomez</em>
+					<br><br><br>
+					Just walked in the office and waiting there for me was my new belt. <strong>All I can say is WOW!</strong> The quality of the leather and the workmanship are top notch and it's <strong>obvious this belt will last a long, long time</strong>. Showed it to some of the guys here at the <em>American Handgunner Magazine</em> office and their reaction was the same as mine. Thanks again for the great service and quick turnaround time.<br><br>
+					<em>Sincerely, Steve Evatt</em><br>
+					Advertising Manager, American Handgunner Magazine
+					<br><br><br>
+					I just had to take a second to write and let you know how pleased I am with my new belt. I can't get over the quality. I showed it to several friends and my girlfriend, and they all thought it was <strong>one of the nicest looking belts they had ever seen</strong>. I didn't even bother to tell them that it is a gun belt. Speaking of which, the first thing I did when I got it was put it on and slap on my 5" 1911 in an OWB holster to test it out. My belt is the 1.5" model and there was no sagging at all. If a belt <strong>doesn't sag with a fully loaded, steel fullsize 1911</strong> .... it aint gonna sag! Very seldom do I get so worked up over a product, but your belt really impressed me. Now the only problem is I am planning on ordering several more belts from you!<br><br>
+					<em>Thank you, Scot Semmens</em>
+					<br><br><br>
+					I just wanted to say thank you for the wonderful belt. Not only does it <strong>make a world of difference with my carry rig</strong> (this is my first real gun belt) but it looks handsome at the same time! I will be passing your name and website along every chance I get.<br><br>
+					<em>Daniel Corriveau</em>
+					<br><br><br>
+					Just wanted you to know that the belt got here today. Like your other belt I have, it's a <strong>handsome piece of high-quality workmanship</strong>. Thanks very much and have happy holidays.<br><br>
+					<em>Ernie Murphy, Honolulu</em>
+					<br><br><br>
+					Just got my belt yesterday; outstanding job – very nice indeed; <strong>excellent quality at any price</strong>, so even better that you charge a very competitive rate!! A real pleasure to do business with you – look forward to placing my next order!!<br><br>
+					<em>Neil Fixter</em>
+					<br><br><br>
+					I received the two belts yesterday and have to tell you they are <strong>the best belts I've ever owned</strong>. The quality and workmanship is superb. I'm going to order belts from you to give as Christmas presents this year, I can't think of a better gift to give! Thanks for the belts and the <strong>great service</strong>!<br><br>
+					<em>Tim Miller</em>
+					<br><br><br>
+					Thank you for making such a fine product. These belts are great. <strong>I took a chance on the 1-1/2" belt</strong>, since I've only worn 1-1/4" belts. This belt <strong>will definitely be my casual wear belt</strong>. Great belts at a great price. I'll definitely be placing another order soon.<br><br>
+					<em>Sincerely, Dominick Sciortino</em><br><br>
+					</p></td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+	<tr style="background-color: #C5AE65">
+		<td colspan="3" style="text-align: center; border: solid 1 #432D16;" height="75px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh114.htm" title="1-1/4 inch Dual-Layer Bullhide Belts">1-1/4" Bullhide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/bh112.htm" title="1-1/2 inch Dual-Layer Bullhide Belts">1-1/2" Bullhide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/bh134.htm" title="1-3/4 inch Dual-Layer Bullhide Belts">1-3/4" Bullhide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/quick.htm" title="Quick Ship Belts">Quick Ship Belts</a><br>
+		<a class="brown" href="http://www.thebeltman.net/www/htdocs/nobuckle.htm" title="No-Buckle Belts">No-Buckle Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/horse.htm" title="Horse Hide Belts">Horse Hide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/impress.htm" title="Impression Belts">Impression Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/elephant.htm" title="Elephant Belts">Elephant Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/buckles.htm" title="Belt Buckles">Buckles</a><br>
+		<a class="brown" href="http://www.thebeltman.net/www/htdocs/key.htm" title="Key Hangers">Key Hangers</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/pintsleeves.htm" title="Pint Sleeves">Pint Sleeves</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/coasters.htm" title="Coasters">Coasters</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/preserve.htm" title="Leather Preservative">Leather Preservative</a><br>
+		<a class="brown" href="http://www.thebeltman.net/www/htdocs/index.htm" border="0">HOME</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/sizing.htm" border="0">SIZING A BELT</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">CUSTOMER SERVICE</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">CONTACT US</a>
+		</td>
+	</tr>
+</tbody></table>
+<table width="820px">
+	<tbody><tr>
+		<td style="text-align: center"><br><a class="whiteu" href="http://www.w3des.com/" border="0" target="_blank">Website Designed and Developed by W3Design (www.w3des.com).</a></td>
+	</tr>
+</tbody></table>
+</center>
+
+
+</body></html>

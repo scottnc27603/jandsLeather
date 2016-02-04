@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://www.cart32hostingred.com/cgi-bin/cart32.exe/thebeltman-itemlist -->
+<html><script>(function main() {
+    // Create enabled event
+    function fireEnabledEvent() {
+        // If gli exists, then we are already present and shouldn't do anything
+        if (!window.gli) {
+            setTimeout(function () {
+                var enabledEvent = document.createEvent("Event");
+                enabledEvent.initEvent("WebGLEnabledEvent", true, true);
+                document.dispatchEvent(enabledEvent);
+            }, 0);
+        } else {
+            //console.log("WebGL Inspector already embedded on the page - disabling extension");
+        }
+    };
+
+    // Grab the path root from the extension
+    document.addEventListener("WebGLInspectorReadyEvent", function (e) {
+        var pathElement = document.getElementById("__webglpathroot");
+        if (window["gliloader"]) {
+            gliloader.pathRoot = pathElement.innerText;
+        } else {
+            // TODO: more?
+            window.gliCssUrl = pathElement.innerText + "gli.all.css";
+        }
+    }, false);
+
+    // Rewrite getContext to snoop for webgl
+    var originalGetContext = HTMLCanvasElement.prototype.getContext;
+    if (!HTMLCanvasElement.prototype.getContextRaw) {
+        HTMLCanvasElement.prototype.getContextRaw = originalGetContext;
+    }
+    HTMLCanvasElement.prototype.getContext = function () {
+        var ignoreCanvas = this.internalInspectorSurface;
+        if (ignoreCanvas) {
+            return originalGetContext.apply(this, arguments);
+        }
+
+        var result = originalGetContext.apply(this, arguments);
+        if (result == null) {
+            return null;
+        }
+
+        var contextNames = ["moz-webgl", "webkit-3d", "experimental-webgl", "webgl", "3d"];
+        var requestingWebGL = contextNames.indexOf(arguments[0]) != -1;
+        if (requestingWebGL) {
+            // Page is requesting a WebGL context!
+            fireEnabledEvent(this);
+
+            // If we are injected, inspect this context
+            if (window.gli) {
+                if (gli.host.inspectContext) {
+                    // TODO: pull options from extension
+                    result = gli.host.inspectContext(this, result);
+                    // NOTE: execute in a timeout so that if the dom is not yet
+                    // loaded this won't error out.
+                    window.setTimeout(function() {
+                        var hostUI = new gli.host.HostUI(result);
+                        result.hostUI = hostUI; // just so we can access it later for debugging
+                    }, 0);
+                }
+            }
+        }
+
+        return result;
+    };
+})();</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<script type="text/javascript" src="./thebeltman-itemlist_files/jquerytools.js"></script><title></title>
+<style type="text/css">
+#OverlayDialog {display:none;z-index:10000;width:500px;min-height:525px;background-color:#ffffff;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}#VerifyAddressPopUpDialog {display:none;z-index:10000;background-color:#dddddd;width:500px;min-height:200px;border:1px solid #666;}</style>
+<script language="javascript">
+function DoAjaxEval(strURL) {  $j.post(strURL,'',function(data){eval(data);},"html");}
+</script>
+<style type="text/css">.modal {background-color:#fff;display:none;width:200px;padding:15px;text-align:left;border:2px solid #333;opacity:0.8;-moz-border-radius:6px;-webkit-border-radius:6px;border-radius:6px;-moz-box-shadow: 0 0 50px #ccc;-webkit-box-shadow: 0 0 50px #ccc;text-align:center;}</style></head>
+<body background="" bgcolor="#D8CAAB" width="100%" border="0" style="border-collapse: collapse; background-color: #d8caab;">
+
+<center>
+<!-- For use without a Title Image in Cart32 Admin -->
+<!-- <img src="" alt=""> -->
+<!-- For use without a Title Image in Cart32 Admin -->
+<!-- <font size=+2><b></b></font><br> -->
+<b><font face="Tahoma,Arial,Helvetica" size="+0"></font></b>
+
+
+<br>
+
+<center>
+<!-- T1 -->
+<table style="width: 820px; height: 45px; align: center; background-color: #ffffff; border: solid 1 #432D16; border-collapse: collapse; cellpadding: 0;
+cellspacing: 0;">
+	<tbody><tr style="background-color: #E9D880">
+		<td width="170px"><img src="./thebeltman-itemlist_files/bullheadsm.jpg" border="0"></td>
+		<td><p style="color: #432D16; font-family: Verdana, Arial, Helvetica; font-size: 9pt; font-style: normal; font-weight: bold; margin: 0px 0px 4px 0px">PO Box 1302<br>
+		Apex, NC 27502-1302<br>
+		tel. (919) 387-1997<br>
+		<br>
+		</p></td>
+		<td style="border: solid 0 black; padding: 0; margin: 0; vertical-align: top; color: black; font-family: Verdana, Arial, Helvetica; font-size: 0pt; font-style: normal; font-weight: normal; text-align: right"><img src="./thebeltman-itemlist_files/tools3.jpg"></td>
+	</tr>
+</tbody></table>
+<!-- T2 -->
+<table style="width: 820px; height: 20px; align: center; background-color: #ffffff; border: solid 1 #432D16; border-collapse: collapse; cellpadding: 0; cellspacing: 0; margin: -1px 0px 0px 0px;">
+	<tbody><tr style="background-color: #c5AE65">
+		<td style="text-align: center" height="25px"><p <p="" style="color: #432D16; font-family: Verdana, Arial, Helvetica; font-size: 9pt; font-style: normal; font-weight: bold; margin: 0px 0px 4px 0px">THE BELTMAN SHOPPING CART</p></td>
+	</tr>
+</tbody></table>
+<a href="https://www.cart32hostingred.com/cgi-bin/cart32.exe/thebeltman-itemlist#" id="WorkingDialogTrigger" rel="#WorkingDialog" style="font-size:0px;">&nbsp;</a><div class="modal" id="WorkingDialog" style="font-family:Tahoma,Arial;color:#111111;"><a class="close"></a><img src="./thebeltman-itemlist_files/spinner-bw.gif" alt="Working..."> Working ...</div><script language="javascript">$j(document).ready(function(){  $j("#WorkingDialogTrigger").overlay({top:150,mask:{color:'#aaaaaa',loadSpeed:0,opacity:0.9},closeOnClick:false,speed:0});});</script><script language="javascript">$j('.MinOrderMet').show();$j('.MinOrderNotMet').hide();</script>
+</center>
+
+<hr noshade="" width="75%">
+
+<center>
+<!--Cart32Message--><br>
+
+<font face="Tahoma,Arial,Helvetica" size="+1"><b>There are no items in your shopping cart.</b></font>
+
+
+</center>
+
+<br>
+<center>
+
+</center>
+
+<hr noshade="" width="75%">
+
+<center>
+<center>
+<!-- T1 -->
+<p style="font-size: 8pt; font-family: Verdana, Arial, Helvetica;">TO CONTINUE SHOPPING, CLICK ON ANY LINK BELOW</p><br> <br>
+<table style="width: 820px; align: center; background-color: #ffffff; border: solid 1 #432D16; border-collapse: collapse; cellpadding: 0; cellspacing: 0; margin: -1px 0px 0px 0px;">
+	<tbody><tr style="background-color: #C5AE65">
+		<td colspan="3" style="text-align: center; border: solid 1 #432D16;" height="75px"><a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/bh114.htm" title="1-1/4 inch Dual-Layer Bullhide Belts">1-1/4" Bullhide Belts</a>  |  <a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/bh112.htm" title="1-1/2 inch Dual-Layer Bullhide Belts">1-1/2" Bullhide Belts</a>  |  <a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/bh134.htm" title="1-3/4 inch Dual-Layer Bullhide Belts">1-3/4" Bullhide Belts</a>  |  <a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/quick.htm" title="Quick Ship Belts">Quick Ship Belts</a><br>
+		<a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/nobuckle.htm" title="No-Buckle Belts">No-Buckle Belts</a>  |  <a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/horse.htm" title="Horse Hide Belts">Horse Hide Belts</a>  |  <a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/impress.htm" title="Impression Belts">Impression Belts</a>  |  <a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/elephant.htm" title="Elephant Belts">Elephant Belts</a>  |  <a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/buckles.htm" title="Belt Buckles">Buckles</a><br>
+		<a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/key.htm" title="Key Hangers">Key Hangers</a>  |  <a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/pintsleeves.htm" title="Pint Sleeves">Pint Sleeves</a>  |  <a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/coasters.htm" title="Coasters">Coasters</a>  |  <a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/preserve.htm" title="Leather Preservative">Leather Preservative</a><br>
+		<a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/index.htm" border="0">HOME</a>  |  <a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/sizing.htm" border="0">SIZING A BELT</a>  |  <a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">CUSTOMER SERVICE</a>  |  <a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">CONTACT US</a>
+		</td>
+	</tr>
+</tbody></table>
+</center>
+<center>
+<table style="width: 325px; align: center;">
+	<tbody><tr>
+		<td height="15px" style="align: center"><br><a style="color: #432D16; font-size: 8pt; text-decoration: underline; font-family: Verdana, Arial, Helvetica;" href="http://www.w3des.com/" border="0" target="_blank">Website Designed by W3Design (www.w3des.com).</a></td>
+	</tr>
+</tbody></table>
+</center>
+<a href="https://www.cart32hostingred.com/cgi-bin/cart32.exe/thebeltman-itemlist#" id="WorkingDialogTrigger" rel="#WorkingDialog" style="font-size:0px;">&nbsp;</a><div class="modal" id="WorkingDialog" style="font-family:Tahoma,Arial;color:#111111;"><img src="./thebeltman-itemlist_files/spinner-bw.gif" alt="Working..."> Working ...</div><script language="javascript">$j(document).ready(function(){  $j("#WorkingDialogTrigger").overlay({top:150,mask:{color:'#aaaaaa',loadSpeed:0,opacity:0.9},closeOnClick:false,speed:0});});</script><script language="javascript">$j('.MinOrderMet').show();$j('.MinOrderNotMet').hide();</script><br></center>
+
+<center><font size="-1" face="Tahoma,Arial,Helvetica"><b><a href="http://www.thebeltman.net/www/htdocs/key.htm"></a></b></font></center>
+
+<a href="https://www.cart32hostingred.com/cgi-bin/cart32.exe/thebeltman-itemlist#" id="WorkingDialogTrigger" rel="#WorkingDialog" style="font-size:0px;">&nbsp;</a><div class="modal" id="WorkingDialog" style="font-family:Tahoma,Arial;color:#111111;"><img src="./thebeltman-itemlist_files/spinner-bw.gif" alt="Working..."> Working ...</div><script language="javascript">$j(document).ready(function(){  $j("#WorkingDialogTrigger").overlay({top:150,mask:{color:'#aaaaaa',loadSpeed:0,opacity:0.9},closeOnClick:false,speed:0});});</script><script language="javascript">$j('.MinOrderMet').show();$j('.MinOrderNotMet').hide();</script> 
+
+
+
+
+
+</center></body></html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0049)http://www.thebeltman.net/www/htdocs/preserve.htm -->
+<html><script async="" src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ LEATHER PRESERVATIVE_files/analytics.js"></script><script>(function main() {
+    // Create enabled event
+    function fireEnabledEvent() {
+        // If gli exists, then we are already present and shouldn't do anything
+        if (!window.gli) {
+            setTimeout(function () {
+                var enabledEvent = document.createEvent("Event");
+                enabledEvent.initEvent("WebGLEnabledEvent", true, true);
+                document.dispatchEvent(enabledEvent);
+            }, 0);
+        } else {
+            //console.log("WebGL Inspector already embedded on the page - disabling extension");
+        }
+    };
+
+    // Grab the path root from the extension
+    document.addEventListener("WebGLInspectorReadyEvent", function (e) {
+        var pathElement = document.getElementById("__webglpathroot");
+        if (window["gliloader"]) {
+            gliloader.pathRoot = pathElement.innerText;
+        } else {
+            // TODO: more?
+            window.gliCssUrl = pathElement.innerText + "gli.all.css";
+        }
+    }, false);
+
+    // Rewrite getContext to snoop for webgl
+    var originalGetContext = HTMLCanvasElement.prototype.getContext;
+    if (!HTMLCanvasElement.prototype.getContextRaw) {
+        HTMLCanvasElement.prototype.getContextRaw = originalGetContext;
+    }
+    HTMLCanvasElement.prototype.getContext = function () {
+        var ignoreCanvas = this.internalInspectorSurface;
+        if (ignoreCanvas) {
+            return originalGetContext.apply(this, arguments);
+        }
+
+        var result = originalGetContext.apply(this, arguments);
+        if (result == null) {
+            return null;
+        }
+
+        var contextNames = ["moz-webgl", "webkit-3d", "experimental-webgl", "webgl", "3d"];
+        var requestingWebGL = contextNames.indexOf(arguments[0]) != -1;
+        if (requestingWebGL) {
+            // Page is requesting a WebGL context!
+            fireEnabledEvent(this);
+
+            // If we are injected, inspect this context
+            if (window.gli) {
+                if (gli.host.inspectContext) {
+                    // TODO: pull options from extension
+                    result = gli.host.inspectContext(this, result);
+                    // NOTE: execute in a timeout so that if the dom is not yet
+                    // loaded this won't error out.
+                    window.setTimeout(function() {
+                        var hostUI = new gli.host.HostUI(result);
+                        result.hostUI = hostUI; // just so we can access it later for debugging
+                    }, 0);
+                }
+            }
+        }
+
+        return result;
+    };
+})();</script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Gun Belts by The Belt Man | tel. (919) 387-1997 | LEATHER PRESERVATIVE</title>
+<meta name="Generator" content="EditPlus">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<link rel="STYLESHEET" type="text/css" href="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ LEATHER PRESERVATIVE_files/tbm.css">
+
+<script language="javascript">
+
+// Function to 'activate' images.
+function imgOn(imgName) {
+        if (document.images) {
+            document[imgName].src = "images/" + imgName + "_h.gif";
+        }
+}
+
+// Function to 'deactivate' images.
+function imgOff(imgName) {
+        if (document.images) {
+            document[imgName].src = "images/" + imgName + ".gif";
+        }
+}
+
+function open_window (url){
+window.open(url,"win",'toolbar=1,location=1,directories=0,status=1,menubar=1,scrollbars=1,resizable=1,width=520,height=350');
+}
+
+function popUppreserve1(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=670,height=500,left = 160,top = 100');");
+}
+
+function popUppreserve2(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=670,height=500,left = 160,top = 100');");
+}
+
+function popUppreserve3(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=670,height=500,left = 160,top = 100');");
+}
+
+function popUppreserve4(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=670,height=500,left = 160,top = 100');");
+}
+
+function popUpvs(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=580,height=390,left = 160,top = 100');");
+}
+
+function popUpps(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=350,height=300,left = 160,top = 100');");
+}
+
+function popUpt(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=600,height=500,left = 160,top = 100');");
+}
+
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-70936675-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body width="100%" border="0" style="border-collapse: collapse;">
+<center>
+<!-- T1 -->
+<table class="home1">
+	<tbody><tr style="background-color: #E9D880">
+		<td width="170px"><a href="http://www.thebeltman.net/www/htdocs/index.htm"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ LEATHER PRESERVATIVE_files/bullheadsm.jpg" border="0" alt="Gun Belts by The Beltman"></a></td>
+		<td><p class="9b" style="margin: 0px 0px 4px 0px">PO Box 1302<br>
+		Apex, NC 27502-1302<br>
+		tel. (919) 387-1997<br>
+		<br>
+		</p><p style="margin: -10px 0px 4px 0px">
+			<script language="javascript">
+			<!-- // Javascript Email Address Encoder
+			var first = 'ma';
+			var second = 'il';
+			var third = 'to:';
+			var address = 'sales';
+			var domain = 'thebeltman';
+			var ext = 'net'; 
+			document.write('<a class="brown9bu" href="');
+			document.write(first+second+third);
+			document.write(address);
+			document.write('&#64;');
+			document.write(domain);
+			document.write('.');
+			document.write(ext);  
+			document.write('">'); 
+			document.write('click to email us</a>');
+			// -->
+			</script><a class="brown9bu" href="mailto:sales@thebeltman.net">click to email us</a>
+		</p><p class="USA"><br><strong>MADE IN THE USA</strong></p>
+		</td>
+		<td class="nopadding" style="text-align: right"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ LEATHER PRESERVATIVE_files/tools3.jpg"></td>
+	</tr>
+</tbody></table>
+<!-- T2 -->
+<table class="home2">
+	<tbody><tr style="background-color: #C5AE65">
+		<td height="44px"><a href="https://www.cart32hostingred.com/cgi-bin/cart32.exe/thebeltman-itemlist" border="0"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ LEATHER PRESERVATIVE_files/cart.gif"></a></td>
+		<td style="text-align: right"><a class="brown" href="http://www.thebeltman.net/www/htdocs/index.htm" border="0">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/sizing.htm" border="0">Sizing a Belt</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">Customer Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	</tr>
+</tbody></table>
+<table class="home3">
+	<tbody><tr valign="top">
+		<td width="170px">
+			<table style="background-color: #E9D880; border: solid 1 #432D16; border-collapse: collapse; margin: -1px 0px 0px 0px;">
+				<tbody><tr>
+					<td class="menuhead">SHOP PRODUCTS
+				</td></tr>
+				<tr>
+					<td class="menubody">
+					BELTS<br>
+						<p style="padding: 5px 0px 0px 10px">Dual-Layer Bullhide Belts:<br>
+						</p><p style="padding: 5px 0px 0px 20px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh114.htm" alt="1-1/4 inch Dual-Layer Bullhide Belts">1-1/4" Width Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 20px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh112.htm" alt="1-1/2 inch Dual-Layer Bullhide Belts">1-1/2" Width Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 20px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh134.htm" alt="1-3/4 inch Dual-Layer Bullhide Belts">1-3/4" Width Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/quick.htm" title="Quick Ship Belts">Quick Ship Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/nobuckle.htm" title="No-Buckle Belts">No-Buckle Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/horse.htm" title="Horse Hide Belts">Horse Hide Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/impress.htm" title="Impression Belts">Impression Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/elephant.htm" title="Elephant Belts">Elephant Belts</a><br>
+						</p><p style="padding: 5px 0px 15px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/buckles.htm" title="Belt Buckles">Belt Buckles</a></p>
+					ACCESSORIES<br>
+						<p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/key.htm" alt="Key Hangers">Deluxe Key Hangers</a>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/pintsleeves.htm" alt="Pint Sleeves">Pint Sleeves</a>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/coasters.htm" alt="Coasters">Coasters</a>
+						</p><p class="rust" style="padding: 5px 0px 15px 10px">Leather Preservative<br>
+					</p></td>
+				</tr>
+				<tr>
+					<td class="menuhead">LEARNING CENTER
+				</td></tr>
+				<tr>
+					<td class="menubody">
+					<p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/aboutb.htm" title="About Our Belts">About Our Belts</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/sizing.htm" title="Sizing a Belt">Sizing a Belt</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="boldred" href="http://www.thebeltman.net/www/htdocs/faq.htm" title="Frequently Asked Questions">Frequently Asked<br>Questions</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/testimonials.htm" title="Testimonials">Testimonials</a><br><br>
+					</p></td>
+				</tr>
+				<tr>
+					<td class="menuhead">COMPANY INFORMATION
+				</td></tr>
+				<tr>
+					<td class="menubody">
+					<p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/about.htm" title="About Us">About Us</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" title="Customer Service">Customer Service</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/order.htm" title="Ordering &amp; Shipping Info">Ordering &amp; Shipping Info</a><br><br>
+					</p></td>
+				</tr>
+			</tbody></table>
+		<p class="freeship">FREE SHIPPING!!</p>
+		<p class="freeship2">For all Pint Sleeves, Coasters, Buckles, Key Hangers, and Leather Treatment when ordered WITH a belt.</p>
+		<br>
+		<p class="made">SPECIAL ORERS</p>
+		<p class="made2">Don't see what you want here? Call us at 919-387-1997.<br>&nbsp;
+		</p></td>
+		<td colspan="2">
+			<!-- Table2 contains products photos & prices -->
+			<table width="635px">
+				<!-- tr1 -->
+				<tbody><tr>
+					<!-- Table2 spacer columns -->
+					<td width="250px" height="2px">&nbsp;</td>
+					<td width="385px">&nbsp;</td>
+				</tr>
+				<!-- products bullhide 1-1/4 inch -->
+				<tr valign="bottom">
+					<td class="cathead" colspan="2"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ LEATHER PRESERVATIVE_files/preservehead.gif" border="0" alt="Leather Preservative"></td>
+				</tr>
+				<tr valign="top">
+					<td class="deshead" width="250px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ LEATHER PRESERVATIVE_files/lp.gif" border="0" alt="4 ounce Obenauf Heavy Duty Leather Preservative">
+					<br>
+					<img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ LEATHER PRESERVATIVE_files/saddle.jpg">
+					<br><br>
+					</td>
+					<td class="deshead2">
+					<form action="https://www.cart32hostingred.com/cgi-bin/cart32.exe/thebeltman-additem" method="post" name="form4" id="form4"><br>
+						<table>
+							<tbody><tr>
+								<td class="options2"><br><br>
+								<p class="b">Obenauf Heavy Duty<br>
+								Leather Preservative&nbsp;&nbsp;&nbsp;<br>
+								</p></td><td class="options"><br><br><p>
+									<select name="p1" id="p1">
+									  <option value="4oz" selected="">4 oz. Jar</option>
+									</select>
+									<input name="t1" type="hidden" id="t1" value="d-Size;4oz:price=+12.00;">
+								</p></td>
+							</tr>
+							<tr>
+								<td class="options"><p class="b">Quantity:</p></td>
+								<td class="options"><p>
+									<input name="qty" type="text" id="qty" value="1" size="2" maxlength="2">
+								</p></td>
+							</tr>
+							<tr>
+								<td valign="top" nowrap="">
+									<input name="Item" type="hidden" id="Item" value="4 oz. Jar Obenaufs">
+									<input type="submit" name="Submit" value="Add to Cart">
+									<input name="weight" type="hidden" id="weight" value="1">
+									<input name="Price" type="hidden" id="Price" value="0">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">&nbsp;</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+								<br><br>
+								<p>Since the Beltman began operation we have been advising the use of KIWI NEUTRAL shoe polish for maintenance of belt and holster leather. This is still solid information (see <a class="brownu" href="http://www.thebeltman.net/faq.htm#14">FAQ #14</a>). Now a product has become available that is truly outstanding. OBENAUF'S LP (Leather Preservative) will rejuvenate old leather and protect new leather from heat, drying, and scuffing, <em>without</em> turning firm gun leather (belts and holsters) into limp noodles! At room temperature it is much firmer than shoe polish. It is applied by rubbing it with your finger tips which softens it sufficiently when applied to your belts, holsters, saddles, boots, or any <em>smooth</em> leather that is likely to see hard use.
+								<br><br>
+								We offer the 4 oz. jar for $12.00 (shipping included). This is great stuff folks! Try it, you'll like it. <strong>FREE SHIPPING TO USA ADDRESSES!!</strong>
+								<br><br>
+								</p></td>
+							</tr>
+						</tbody></table>
+					</form>
+				</td></tr>
+				<tr>
+					<td class="deshead" colspan="2">
+					<em>The following is from OBENAUF'S own literature (they tell their story better than we can).</em>
+					<br><br>
+					<strong>The Obenauf LP Story, as told by Marv Obenauf</strong>
+					<br>
+					As a firefighter for 34 years I ruined quite a few expensive boots long before they had a chance to wear out. In 1989 I researched with boot companies, saddlers, and other leather specialists to determine which product on the market was best suited to protect our boots, and our investment, that were often in steam, heat, wet ashes (lye), and caustic fire retardants. I learned that most products are only temporary water repellents or softeners claiming to "condition" leather. They slough off with flexing or light scufffing through brush, leaving leather dried and unprotected. None resist chemicals or heat. Most contain chemicals, mink oil, or pine tar that cause irreparable damage to leather fibers. The common consensus was that the only way to protect our boots against such elements was to stay out of those conditions, as we were baking the leather and literally cooking our boots in lye. 
+					<br><br>
+					We needed something durable that would hang in there when the going got rough (also a common and necessary trait among firefighters). It had to resist heat, caustic fire retardant chemicals, moisture, and restore lost oils. With help from tanneries, the University of Idaho, and leather craftsmen I experimented with different ingredients and recipes. My goal was to extend (preserve) the useful life of leather, not just shed water or soften it. I focused on long-range effect. Eventually I had what we needed. It not only worked well; but a little went a long way, as it melted completely into the leather and stayed, which made it economical too. With regular use our boots lasted noticeably longer and stayed comfortable. 
+					<br><br>
+					As word spread and demand for Obenauf's LP (Leather Preservative) grew among ranches, loggers, bikers, boot companies, and anyone with leather, it was apparent that we had a product that was not otherwise available.
+					<br><br>
+					<p><strong>Obenauf's Heavy Duty Leather Preservative (LP)</strong> is the most durable protection available for leather on the face of the planet. Originally developed for the extraordinary conditions endured by wildland firefighters, LP protects, preserves, and restores furniture, boots, saddles, motorcycle leathers, fine apparel, tool pouches, gloves, baseball mitts, and more. It is especially useful for any leather that gets worked hard and is regularly exposed to severe elements.
+					<br><br>
+					Three different natural oils are suspended in Beeswax and Propolis. In the leather these oils gradually seep out of the Beeswax/Propolis. If exposed to heat or flexing the oils are released faster so leather gets oiled instead of parched and cracked. This Beeswax/Propolis* Suspension Formula provides a time-release lubrication to inner fibers while the surface is reinforced against scuffing, and the leather still breathes. The remarkable result is Obenauf's Heavy Duty LP that:
+						</p><ul>
+							<li>Repels water better and longer.</li>
+							<li>Repels acids, petroleum, salt, and chemicals. </li>
+							<li>Restores dried leather to a soft and supple condition and protects it from further damage. </li>
+							<li>Prevents dry rot and resists mildew. </li>
+							<li>Resists premature cracking in flex areas. </li>
+							<li>Works great on Gore-Tex® footwear. </li>
+							<li>Is odorless after applied (very important for hunters).</li>
+							<li>Restores sun-faded leather.</li>
+							<li>Resists scuffing and dry rot.</li>
+							<li>Applies easily with with a clean cloth. </li>
+							<li>Penetrates deeply into leather. </li>
+							<li>Can be buffed to shine or polished over.</li>
+							<li>Contains no harmful silicones, petroleums, solvents, or neatsfoot.</li>
+							<li>Is approved for Gore-Tex® footwear.</li>
+						</ul>
+					*Propolis resists bacteria and mildew, and is a barrier against manure acid, salt, caustic chemicals, and petroleum. Combined with beeswax it repels water better and longer.
+					<br><br>
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+	<tr style="background-color: #C5AE65">
+		<td colspan="3" style="text-align: center; border: solid 1 #432D16;" height="75px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh114.htm" title="1-1/4 inch Dual-Layer Bullhide Belts">1-1/4" Bullhide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/bh112.htm" title="1-1/2 inch Dual-Layer Bullhide Belts">1-1/2" Bullhide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/bh134.htm" title="1-3/4 inch Dual-Layer Bullhide Belts">1-3/4" Bullhide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/quick.htm" title="Quick Ship Belts">Quick Ship Belts</a><br>
+		<a class="brown" href="http://www.thebeltman.net/www/htdocs/nobuckle.htm" title="No-Buckle Belts">No-Buckle Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/horse.htm" title="Horse Hide Belts">Horse Hide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/impress.htm" title="Impression Belts">Impression Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/elephant.htm" title="Elephant Belts">Elephant Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/buckles.htm" title="Belt Buckles">Buckles</a><br>
+		<a class="brown" href="http://www.thebeltman.net/www/htdocs/key.htm" title="Key Hangers">Key Hangers</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/pintsleeves.htm" title="Pint Sleeves">Pint Sleeves</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/coasters.htm" title="Coasters">Coasters</a>&nbsp;&nbsp;|&nbsp;&nbsp;<span style="color:#BC7646;">Leather Preservative</span><br>
+		<a class="brown" href="http://www.thebeltman.net/www/htdocs/index.htm" border="0">HOME</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/sizing.htm" border="0">SIZING A BELT</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">CUSTOMER SERVICE</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">CONTACT US</a>
+		</td>
+	</tr>
+</tbody></table>
+<table width="820px">
+	<tbody><tr>
+		<td style="text-align: center;"><br>
+		<a class="whiteu" href="http://www.w3des.com/" border="0" target="_blank">Website Designed and Developed by W3Design (www.w3des.com).</a></td>
+	</tr>
+</tbody></table>
+</center>
+
+
+</body></html>

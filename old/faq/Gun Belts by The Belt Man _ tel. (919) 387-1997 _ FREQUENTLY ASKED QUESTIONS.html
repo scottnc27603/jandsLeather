@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0044)http://www.thebeltman.net/www/htdocs/faq.htm -->
+<html><script async="" src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ FREQUENTLY ASKED QUESTIONS_files/analytics.js"></script><script>(function main() {
+    // Create enabled event
+    function fireEnabledEvent() {
+        // If gli exists, then we are already present and shouldn't do anything
+        if (!window.gli) {
+            setTimeout(function () {
+                var enabledEvent = document.createEvent("Event");
+                enabledEvent.initEvent("WebGLEnabledEvent", true, true);
+                document.dispatchEvent(enabledEvent);
+            }, 0);
+        } else {
+            //console.log("WebGL Inspector already embedded on the page - disabling extension");
+        }
+    };
+
+    // Grab the path root from the extension
+    document.addEventListener("WebGLInspectorReadyEvent", function (e) {
+        var pathElement = document.getElementById("__webglpathroot");
+        if (window["gliloader"]) {
+            gliloader.pathRoot = pathElement.innerText;
+        } else {
+            // TODO: more?
+            window.gliCssUrl = pathElement.innerText + "gli.all.css";
+        }
+    }, false);
+
+    // Rewrite getContext to snoop for webgl
+    var originalGetContext = HTMLCanvasElement.prototype.getContext;
+    if (!HTMLCanvasElement.prototype.getContextRaw) {
+        HTMLCanvasElement.prototype.getContextRaw = originalGetContext;
+    }
+    HTMLCanvasElement.prototype.getContext = function () {
+        var ignoreCanvas = this.internalInspectorSurface;
+        if (ignoreCanvas) {
+            return originalGetContext.apply(this, arguments);
+        }
+
+        var result = originalGetContext.apply(this, arguments);
+        if (result == null) {
+            return null;
+        }
+
+        var contextNames = ["moz-webgl", "webkit-3d", "experimental-webgl", "webgl", "3d"];
+        var requestingWebGL = contextNames.indexOf(arguments[0]) != -1;
+        if (requestingWebGL) {
+            // Page is requesting a WebGL context!
+            fireEnabledEvent(this);
+
+            // If we are injected, inspect this context
+            if (window.gli) {
+                if (gli.host.inspectContext) {
+                    // TODO: pull options from extension
+                    result = gli.host.inspectContext(this, result);
+                    // NOTE: execute in a timeout so that if the dom is not yet
+                    // loaded this won't error out.
+                    window.setTimeout(function() {
+                        var hostUI = new gli.host.HostUI(result);
+                        result.hostUI = hostUI; // just so we can access it later for debugging
+                    }, 0);
+                }
+            }
+        }
+
+        return result;
+    };
+})();</script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Gun Belts by The Belt Man | tel. (919) 387-1997 | FREQUENTLY ASKED QUESTIONS</title>
+<meta name="Generator" content="EditPlus">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<link rel="STYLESHEET" type="text/css" href="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ FREQUENTLY ASKED QUESTIONS_files/tbm.css">
+
+<script language="javascript">
+
+// Function to 'activate' images.
+function imgOn(imgName) {
+        if (document.images) {
+            document[imgName].src = "images/" + imgName + "_h.gif";
+        }
+}
+
+// Function to 'deactivate' images.
+function imgOff(imgName) {
+        if (document.images) {
+            document[imgName].src = "images/" + imgName + ".gif";
+        }
+}
+
+function open_window (url){
+window.open(url,"win",'toolbar=1,location=1,directories=0,status=1,menubar=1,scrollbars=1,resizable=1,width=520,height=350');
+}
+
+function popUpspout(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=750,height=550,left = 160,top = 100');");
+}
+
+function popUpps(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=350,height=300,left = 160,top = 100');");
+}
+
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-70936675-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body width="100%" border="0" style="border-collapse: collapse;">
+<center>
+<!-- T1 -->
+<table class="home1">
+	<tbody><tr style="background-color: #E9D880">
+		<td width="170px"><a href="http://www.thebeltman.net/www/htdocs/index.htm"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ FREQUENTLY ASKED QUESTIONS_files/bullheadsm.jpg" border="0" alt="Gun Belts by The Beltman"></a></td>
+		<td><p class="9b" style="margin: 0px 0px 4px 0px">PO Box 1302<br>
+		Apex, NC 27502-1302<br>
+		tel. (919) 387-1997<br>
+		<br>
+		</p><p style="margin: -10px 0px 4px 0px">
+			<script language="javascript">
+			<!-- // Javascript Email Address Encoder
+			var first = 'ma';
+			var second = 'il';
+			var third = 'to:';
+			var address = 'sales';
+			var domain = 'thebeltman';
+			var ext = 'net'; 
+			document.write('<a class="brown9bu" href="');
+			document.write(first+second+third);
+			document.write(address);
+			document.write('&#64;');
+			document.write(domain);
+			document.write('.');
+			document.write(ext);  
+			document.write('">'); 
+			document.write('click to email us</a>');
+			// -->
+			</script><a class="brown9bu" href="mailto:sales@thebeltman.net">click to email us</a>
+		</p><p class="USA"><br><strong>MADE IN THE USA</strong></p>
+		</td>
+		<td class="nopadding" style="text-align: right"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ FREQUENTLY ASKED QUESTIONS_files/tools3.jpg"></td>
+	</tr>
+</tbody></table>
+<!-- T2 -->
+<table class="home2">
+	<tbody><tr style="background-color: #C5AE65">
+		<td height="44px"><a href="https://www.cart32hostingred.com/cgi-bin/cart32.exe/thebeltman-itemlist" border="0"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ FREQUENTLY ASKED QUESTIONS_files/cart.gif"></a></td>
+		<td style="text-align: right"><a class="brown" href="http://www.thebeltman.net/www/htdocs/index.htm" border="0">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/sizing.htm" border="0">Sizing a Belt</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">Customer Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	</tr>
+</tbody></table>
+<table class="home3">
+	<tbody><tr valign="top">
+		<td width="170px">
+			<table style="background-color: #E9D880; border: solid 1 #432D16; border-collapse: collapse; margin: -1px 0px 0px 0px;">
+				<tbody><tr>
+					<td class="menuhead">SHOP PRODUCTS
+				</td></tr>
+				<tr>
+					<td class="menubody">
+					BELTS<br>
+						<p style="padding: 5px 0px 0px 10px">Dual-Layer Bullhide Belts:<br>
+						</p><p style="padding: 5px 0px 0px 20px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh114.htm" alt="1-1/4 inch Dual-Layer Bullhide Belts">1-1/4" Width Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 20px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh112.htm" alt="1-1/2 inch Dual-Layer Bullhide Belts">1-1/2" Width Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 20px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh134.htm" alt="1-3/4 inch Dual-Layer Bullhide Belts">1-3/4" Width Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/quick.htm" title="Quick Ship Belts">Quick Ship Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/nobuckle.htm" title="No-Buckle Belts">No-Buckle Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/horse.htm" title="Horse Hide Belts">Horse Hide Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/impress.htm" title="Impression Belts">Impression Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/elephant.htm" title="Elephant Belts">Elephant Belts</a><br>
+						</p><p style="padding: 5px 0px 15px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/buckles.htm" title="Belt Buckles">Belt Buckles</a></p>
+					ACCESSORIES<br>
+						<p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/key.htm" alt="Key Hangers">Deluxe Key Hangers</a>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/pintsleeves.htm" alt="Pint Sleeves">Pint Sleeves</a>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/coasters.htm" alt="Coasters">Coasters</a>
+						</p><p style="padding: 5px 0px 15px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/preserve.htm" alt="Leather Preservative">Leather Preservative</a>
+					</p></td>
+				</tr>
+				<tr>
+					<td class="menuhead">LEARNING CENTER
+				</td></tr>
+				<tr>
+					<td class="menubody">
+					<p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/aboutb.htm" title="About Our Belts">About Our Belts</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/sizing.htm" title="Sizing a Belt">Sizing a Belt</a><br>
+					</p><p class="rust" style="padding: 5px 0px 0px 10px">Frequently Asked<br>Questions<br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/testimonials.htm" title="Testimonials">Testimonials</a><br><br>
+					</p></td>
+				</tr>
+				<tr>
+					<td class="menuhead">COMPANY INFORMATION
+				</td></tr>
+				<tr>
+					<td class="menubody">
+					<p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/about.htm" title="About Us">About Us</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" title="Customer Service">Customer Service</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/order.htm" title="Ordering &amp; Shipping Info">Ordering &amp; Shipping Info</a><br><br>
+					</p></td>
+				</tr>
+			</tbody></table>
+		<p class="made">STILL HAVE QUESTIONS?</p>
+		<p class="made2">Call us at 919-387-1997.<br>&nbsp;
+		</p></td>
+		<td colspan="2">
+			<!-- Table2 contains text -->
+			<table width="635px">
+				<!-- tr1 -->
+				<tbody><tr>
+					<td style="padding: 10px">
+					<p style="padding: 5px 0px 0px 0px;"><strong>READ IT NOW:</strong> <a class="brownu" href="javascript:popUpspout(&#39;spout.htm&#39;)">Important Information</a></p><br><a name="top">
+					<p class="9b" style="padding: 5px 0px 0px 0px;"><strong>FREQUENTLY ASKED QUESTIONS</strong><br><br>
+					<table>
+						<tbody><tr valign="top">
+							<td width="48%"><p>1. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#1">When will I receive my order?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">2. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#2">How do I determine what length to order?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">3. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#3">Where are your belts made?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">4. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#4">Are your buckles removable?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">5. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#5">How are the belts shipped?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">6. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#6">How thick are the belts?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">7. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#7">What's the difference between BULL hide and COW hide?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">8. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#8">Are the belts actually as wide as the stated width?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">9. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#9">I'm a big guy, what if I lose a lot of weight?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">10. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#10">Should I get the internal stiffener?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">11. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#11">Is your website secure?</a><br>
+							</p></td>
+							<td width="4%">&nbsp;</td>
+							<td width="48%"><p>12. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#12">When do you bill my card?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">13. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#13">You offer a "powder coated" black buckle. What's the deal?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">14. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#14">How should I care for my new belt?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">15. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#15">Do you have a warranty or a return policy?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">16. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#16">Why do you use two layers of leather instead of one thick layer?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">17. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#17">Can I get a different buckle?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">18. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#18">What is the "Velcro<sup>®</sup> brand strip" option?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">19. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#19">What is a "tapered" belt?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">20. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#20">Can I change my order?</a><br>
+							</p><p style="padding: 5px 0px 0px 0px">21. <a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#21">I didn't lock-tite my buckle screws and they came out. How can I get some more?</a><br>
+							</p></td>
+						</tr>
+					</tbody></table>
+					<br>
+					</p><hr size="1px" width="70%" color="#432D16"><br>
+					</a><p><a name="top"><strong></strong></a><strong><a name="1">1. When will I receive my order?</a></strong><a name="1"><br>
+					All orders (except QUICK SHIP belt-only orders) will ship approximately 30 days from the time we receive it. (This is subject to change at any time.) All of our belts (except for QUICK SHIP belts) are NOT in stock. Each one is made-to-order in the order that they are received. QUICK SHIP belt-only orders will ship the next business day. If your order contains both QUICK SHIP belts and other belts, your order will ship approximately as stated above.
+					<br><br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="2">2. How do I determine what length to order?</a></strong><a name="2"><br>
+					Measure a belt you have now from the <strong>FAR</strong> end of the buckle to the hole you use most often (to the nearest inch). This is the number I need (to the nearest inch). This measurement may be larger than you think your waist is -- this is normal. Also, do not measure a belt that stretches. We need to know your actual circumference.
+					<br>
+					<br>
+					<img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ FREQUENTLY ASKED QUESTIONS_files/sizing.gif">
+					<br>
+					If you don't have a belt (I've met a lot of guys that didn't) use a cloth tape measure. Put it through the belt loops on your pants and pull it a <strong>LITTLE</strong> snug. Note the measurement to the nearest inch.
+					<br><br>
+					<strong>A word about sizing:</strong> You are about to buy a dual layer gun belt made from a selection of several different leathers; bull hide, horse hide, or elephant, or a combination of two of them. Our belts are designed to be stiff and firm to support your side arms and other gear. They will do all of that very well, however, they will not defy gravity! If you hang a two pound pistol on <strong>ANY</strong> belt and don't buckle it up snugly enough, it's going to sag. (It's a leather belt, not a steel I-beam!)  This should be remembered as you are choosing which hole in your current belt to measure to, especially if you are going to be carrying IWB. <strong>Put the gear on!</strong> Adjust it to the proper snugness for security and comfort. Look at which hole you are using and measure to <strong>THAT</strong> hole. The belt we make for you will be that length from the tip of the buckle to the center hole.
+					<br><br>
+					Many of our customers use the same belt for IWB carry and every day wear, whether they are carrying a holstered pistol or not. If this is what you have in mind, and you carry IWB often enough, and if the measurement is significantly different (2 inches or more), you can order a belt <strong>IN BETWEEN</strong> the two measurements. If you carry IWB every day, measure that way. If you don't carry IWB at all, measure normally as described above.
+					<br><br>
+					When I infrequently carry a 5 inch 1911 Colt IWB, I just let my every day belt out one 1-inch hole and rock on! I know people who, when carrying IWB, tighten their belt to a <strong>SHORTER</strong> hole than they usually wear it&nbsp;.&nbsp;.&nbsp;.&nbsp;(different strokes, eh?).
+					<br><br>
+					I know this is getting wordy and tedious, but you are going to have this belt a very long time. If there is any further confusion on this point, call me any time (1-919-387-1997) and we'll sort it out.
+					<br><br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="3">3. Where are your belts made?</a></strong><a name="3"><br>
+					All of our belts are proudly manufactured in our shop in Apex, North Carolina, USA.
+					<br><br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="4">4. Are your buckles removable?</a></strong><a name="4"><br>
+					Yes, the buckles are attached with "Chicago Screws". That's the good news. The bad news is that screws sometimes tend to come loose! You should check the screws from time to time to make sure they are tight, or secure them with LOKE-TITE or clear nail polish on the threads. We CANNOT do that here for obvious reasons. 
+					<br><br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="5">5. How are the belts shipped?</a></strong><a name="5"><br>
+					We use TWO- to THREE-DAY PRIORITY U.S. MAIL.
+					<br><br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="6">6. How thick are the belts?</a></strong><a name="6"><br>
+					Each layer of bull hide is almost 1/8" thick so the finished TWO layer belt will be ALMOST 1/4" thick.
+					<br><br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="7">7. What's the difference between BULL hide and COW hide?</a></strong><a name="7"><br>
+					Bull hide, as the term implies, is the male of the species, whereas cow is the female. The bulls grow up with testosterone in their blood which causes the hide to be firmer, denser, and therefore stiffer. It just makes a better belt.
+					<br><br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="8">8. Are the belts actually as wide as the stated width?</a></strong><a name="8"><br>
+					Darn near! The width of the belt is actually determined by the width of the hole in the buckle that the strap goes through. The belt strap is less than 1/16th of an inch narrower so it will fit through the buckle.
+					<br><br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="9">9. I'm a big guy, what if I lose a lot of weight?</a></strong><a name="9"><br>
+					Don't go punching a lot of new holes in the belt! Send the belt back to us and we'll shorten it from the buckle end. The charge for this service is $15 <strong>IN CASH</strong> per belt and includes the shortening and return shipping. Any dual-layer bull hide belt can be shortened TWO inches, FOUR inches, or anything six inches or more. They cannot be shortened three inches or five inches. (This applies only to the standard dual-layer bull hide and horse hide belts. The "no-buckle" belts, taper belts, and exotic hide belts <strong>cannot</strong> be shortened.)<br><br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="10">10. Should I get the </a><a class="brownu" href="javascript:popUpps(&#39;stiff.htm&#39;)">internal stiffener</a>?</strong><br>
+					If you carry a heavy firearm or have a high-ride top-heavy holster you might want to consider it for the inch-and a quarter wide belts. The stiffener is not usually necessary for the wider belts unless you like it really stiff. The stiffener provides a greater degree of vertical stability but still allows the belt to take on a natural curve that any leather belt will do after it has been worn for a while. A belt shorter than 36 inches <strong>DOES NOT</strong> need an internal stiffener. Horse hide belts <strong>DO NOT</strong> need an internal stiffener.
+					<br><br>
+					<a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="11">11. Is your website secure?</a></strong><a name="11"><br>
+					Yes, all internet orders are processed by First American Payment Systems in Fort Worth, Texas. They, as well as our shopping cart, are totally encrypted and quite secure. 
+					<br><br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="12">12. When do you bill my card?</a></strong><a name="12"><br>
+					All internet orders are processed automatically and usually the same day as the order. If you are hesitant to give out your credit card information on the web, or don't want your card run until we are ready to cut leather, then call your order in on the telephone.
+					<br><br>
+					Telephone: 1-919-387-1997
+					<br><br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="13">13. You offer a "powder coated" black buckle. What's the deal?</a></strong><a name="13"><br>
+					Powder Coating is a process where positively charged particles of the coating are "puffed" onto the negatively charged object (buckle), and then baked in an oven at 450 degrees F for several hours. This stuff is about TWENTY times tougher than paint. It is used on outdoor furniture, engine parts, motorcycle chassis, power tool casings, and lots of other things that have to endure the danger of chipping, hard use, or high temperatures. It's really tough stuff.
+					<br><br>
+					We thought if you were in the woods and trying to be stealthy, why would you want a shiny brass buckle to give you away? It looks great on all of our belts. We wouldn't have it if it didn't hold up!
+					<br><br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="14">14. How should I care for my new belt?</a></strong><a name="14"><br>
+					Do NOT wad it up in a tight ball when not in use. This unnecessarily stretches the outer layer of the belt and compresses the inner layer. If you do this often , the belt will soon lose its natural stiffness.
+					<br><br>
+					When putting your belt on, do NOT crank it over as if you were securing a load of cargo on a truck! Dragging the belt through its own buckle will damage the edges on your belt. We can't control how you get dressed, so if you want your belt to last a long time, don't bend a dual layer belt any more than 90 degrees when you are putting it on.
+					<br><br>
+					Do NOT use leather softeners such as Neats Foot Oil or Mink Oil on these belts unless you want them limp as a noodle! Our leather is of sufficient quality to last for many years. This stuff is fine for your baseball glove or your hiking boots, but not for gun belts or holsters. 
+					<br><br>
+					If your belt gets hard use or starts to look tired, a coat of KIWI NEUTRAL shoe polish, available at any grocery store or shoe shop will restore the surface appearance. 
+					<br><br>
+					As stated in the CONSTRUCTION Paragraph, the outer layers of these belts are submersion dyed so the color penetration is quite deep. If you manage to scar it down to the natural beige leather, then the appropriate color of shoe polish will help a lot. If you buff it with sufficient elbow grease so the polish no longer comes off on an old t-shirt or shop rag, then it won't come off on your furniture or car seats either.  
+					<br><br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="15">15. Do you have a warranty or a return policy?</a></strong><a name="15"><br>
+					All Beltman products are warranted to be free of defects in materials and workmanship for a period of ONE YEAR of purchase. This DOES NOT cover abuse on your part. 
+					<br><br>
+					(See question #14). 
+					<br><br>
+					See the complete </a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/cs.htm">Return Policy</a> on our Customer Service page.
+					<br><br>
+					<a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="16">16. Why do you use two layers of leather instead of one thick layer?</a></strong><a name="16"><br>
+					Using two layers solves two problems. 
+					<br><br>
+					A. No matter what kind of leather it is, a single layer belt will stretch! Leather is composed of collagen fibers (just like your own skin) that have a grain-like quality. It's not quite like the grain in wood, but it is similar. When you put two layers of leather together, with the grains opposing one another you get a "plywood" effect that virtually eliminates stretching.  
+					<br><br>
+					B. Using two layers allows us to leave the inner layer undyed, or "natural". This prevents leather dye from "bleeding" on your clothes if you get wet or perspire heavily. If you lead an active life or are outdoors a lot, don't tell me this hasn't happened to you.
+					<br><br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="17">17. Can I get a different buckle?</a></strong><a name="17"><br>
+					You can put any buckle you want on these belts. They are held on with "Chicago screws". However, these belts are thicker than normal so just any buckle won't work. The square buckles have been carefully selected to lay flat on the leather so you don't get a big bulge in front. A rounded-style buckle can cause the strap to go through an "S" turn just to get through the buckle, which causes excessive "flexing". Also, the rounded buckles cut into the edges and cause excess wear at that spot. Our buckles are about as long as they are wide, so if you put a larger buckle on your belt, this will change the length of the belt! Call me at 1-919-387-1997 if you have any more questions about this. 
+					<br><br>
+					Some of you have asked for a slightly more rounded buckle. We have chosen to honor your requests and have tracked down a very sturdy and handsome rounded buckle. If a more rounded buckle would suite your sense of fashion or style better, we hope you will like it. However, the square buckle will lay flatter on the belt. <strong>The square buckle is highly recommended.</strong> If you would like to purchase an extra buckle, you may now do so, prices start at $7.00 (visit our </a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/buckles.htm">Belt Buckle</a> page for a picture of available buckles). If you have ordered a belt, they will be shipped together. If you want to order only a buckle, the buckle price includes shipping and handling.
+					<br><br>
+					<a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="18">18. What is the "Velcro<sup>®</sup> brand strip" option?</a></strong><a name="18"><br>
+					The Beltman now offers a loop Velcro<sup>®</sup> brand liner on the inside of the entire usable length of the belt. This is for use with IWB holsters that utilize a V-clip mounting system. It cannot be added to a finished belt. It is sewed to the inside layer during its construction. It does not add much "dimension" to the belt and it prevents the holster from shifting on the belt. 
+					<br><br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="19">19. What is a "tapered" belt?</a></strong><a name="19"><br>
+					The tapered belt is designed to give the appearance of a narrower dress belt across the front third of the waist line while providing the support of a wider belt around the sides and back. We can taper the 1-½" belt down to 1-¼", or we can taper the 1-¾" belt down to 1-½". These are hand cut so this process adds $15.00 to the cost of each belt. The tapering extends to seven inches on either side of the buckle, so the tapering is not practical on belts that are shorter than 36 inches. A tapered belt cannot be shortened if you lose weight (see FAQ #9).<br>
+					<br>
+					This option is available with our dual-layer bull hide belts, horse hide belts, and elephant belts.<br>
+					<br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="20">20. Can I change my order?</a></strong><a name="20"><br>
+					Yes, but you MUST call us at 1-919-387-1997 to do so. Why? because we don't ever see or store your credit card information unless you place your order over the telephone. <strong>DO NOT</strong> e-mail your credit card information!<br>
+					<br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br>
+					<strong><a name="21">21. I didn't lock-tite my buckle screws and they came out. How can I get some more?</a></strong><a name="21"><br>
+					We will send you a pair of screws if you put a U.S one-dollar bill in an envelope and send it to: THE BELTMAN, P.O.BOX 1302, APEX, N.C. Write your COMPLETE name, address, and phone number, and the COLOR of the screws you need on a piece of paper. Wrap it around the dollar and mail it. No checks or money orders please.<br>
+					<br>
+					</a><a class="brownu" href="http://www.thebeltman.net/www/htdocs/faq.htm#top">back to top</a><br>
+					<br><br><br>
+					Thanks for reading all this stuff. It took me forever to type it. 
+					<br><br>
+					Jim Speidel (The Beltman)
+					<br><br>
+					</p></td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+	<tr style="background-color: #C5AE65">
+		<td colspan="3" style="text-align: center; border: solid 1 #432D16;" height="75px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh114.htm" title="1-1/4 inch Dual-Layer Bullhide Belts">1-1/4" Bullhide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/bh112.htm" title="1-1/2 inch Dual-Layer Bullhide Belts">1-1/2" Bullhide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/bh134.htm" title="1-3/4 inch Dual-Layer Bullhide Belts">1-3/4" Bullhide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/quick.htm" title="Quick Ship Belts">Quick Ship Belts</a><br>
+		<a class="brown" href="http://www.thebeltman.net/www/htdocs/nobuckle.htm" title="No-Buckle Belts">No-Buckle Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/horse.htm" title="Horse Hide Belts">Horse Hide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/impress.htm" title="Impression Belts">Impression Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/elephant.htm" title="Elephant Belts">Elephant Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/buckles.htm" title="Belt Buckles">Buckles</a><br>
+		<a class="brown" href="http://www.thebeltman.net/www/htdocs/key.htm" title="Key Hangers">Key Hangers</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/pintsleeves.htm" title="Pint Sleeves">Pint Sleeves</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/coasters.htm" title="Coasters">Coasters</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/preserve.htm" title="Leather Preservative">Leather Preservative</a><br>
+		<a class="brown" href="http://www.thebeltman.net/www/htdocs/index.htm" border="0">HOME</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/sizing.htm" border="0">SIZING A BELT</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">CUSTOMER SERVICE</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">CONTACT US</a>
+		</td>
+	</tr>
+</tbody></table>
+<table width="820px">
+	<tbody><tr>
+		<td style="text-align: center"><br><a class="whiteu" href="http://www.w3des.com/" border="0" target="_blank">Website Designed and Developed by W3Design (www.w3des.com).</a></td>
+	</tr>
+</tbody></table>
+</center>
+
+
+</body></html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.thebeltman.net/www/htdocs/pintsleeves.htm -->
+<html><script async="" src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ PINT SLEEVES_files/analytics.js"></script><script>(function main() {
+    // Create enabled event
+    function fireEnabledEvent() {
+        // If gli exists, then we are already present and shouldn't do anything
+        if (!window.gli) {
+            setTimeout(function () {
+                var enabledEvent = document.createEvent("Event");
+                enabledEvent.initEvent("WebGLEnabledEvent", true, true);
+                document.dispatchEvent(enabledEvent);
+            }, 0);
+        } else {
+            //console.log("WebGL Inspector already embedded on the page - disabling extension");
+        }
+    };
+
+    // Grab the path root from the extension
+    document.addEventListener("WebGLInspectorReadyEvent", function (e) {
+        var pathElement = document.getElementById("__webglpathroot");
+        if (window["gliloader"]) {
+            gliloader.pathRoot = pathElement.innerText;
+        } else {
+            // TODO: more?
+            window.gliCssUrl = pathElement.innerText + "gli.all.css";
+        }
+    }, false);
+
+    // Rewrite getContext to snoop for webgl
+    var originalGetContext = HTMLCanvasElement.prototype.getContext;
+    if (!HTMLCanvasElement.prototype.getContextRaw) {
+        HTMLCanvasElement.prototype.getContextRaw = originalGetContext;
+    }
+    HTMLCanvasElement.prototype.getContext = function () {
+        var ignoreCanvas = this.internalInspectorSurface;
+        if (ignoreCanvas) {
+            return originalGetContext.apply(this, arguments);
+        }
+
+        var result = originalGetContext.apply(this, arguments);
+        if (result == null) {
+            return null;
+        }
+
+        var contextNames = ["moz-webgl", "webkit-3d", "experimental-webgl", "webgl", "3d"];
+        var requestingWebGL = contextNames.indexOf(arguments[0]) != -1;
+        if (requestingWebGL) {
+            // Page is requesting a WebGL context!
+            fireEnabledEvent(this);
+
+            // If we are injected, inspect this context
+            if (window.gli) {
+                if (gli.host.inspectContext) {
+                    // TODO: pull options from extension
+                    result = gli.host.inspectContext(this, result);
+                    // NOTE: execute in a timeout so that if the dom is not yet
+                    // loaded this won't error out.
+                    window.setTimeout(function() {
+                        var hostUI = new gli.host.HostUI(result);
+                        result.hostUI = hostUI; // just so we can access it later for debugging
+                    }, 0);
+                }
+            }
+        }
+
+        return result;
+    };
+})();</script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Gun Belts by The Belt Man | tel. (919) 387-1997 | PINT SLEEVES</title>
+<meta name="Generator" content="EditPlus">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<link rel="STYLESHEET" type="text/css" href="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ PINT SLEEVES_files/tbm.css">
+
+<script language="javascript">
+
+// Function to 'activate' images.
+function imgOn(imgName) {
+        if (document.images) {
+            document[imgName].src = "images/" + imgName + "_h.gif";
+        }
+}
+
+// Function to 'deactivate' images.
+function imgOff(imgName) {
+        if (document.images) {
+            document[imgName].src = "images/" + imgName + ".gif";
+        }
+}
+
+function open_window (url){
+window.open(url,"win",'toolbar=1,location=1,directories=0,status=1,menubar=1,scrollbars=1,resizable=1,width=520,height=350');
+}
+
+function popUppintsleeves1(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=670,height=440,left = 300,top = 100');");
+}
+
+function popUppintsleeves2(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=890,height=400,left = 180,top = 100');");
+}
+
+function popUppintsleeves3(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=670,height=570,left = 300,top = 100');");
+}
+
+function popUpconcho(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=300,height=180,left = 160,top = 100');");
+}
+
+
+
+function validate_form(){
+    var elements = document.forms[0].elements;
+    var length = elements.length;
+   
+    for (var i = 0; i < length ; i++ ){
+       
+        with(elements.item(i)){
+            if (value==null||value==""||value=="Choose a Material & Color"||value=="Choose a Finish"){
+                alert("Please " + value + ".");
+                return false;
+            }
+        }   
+    }
+}
+
+
+
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-70936675-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body width="100%" border="0" style="border-collapse: collapse;">
+<center>
+<!-- T1 -->
+<table class="home1">
+	<tbody><tr style="background-color: #E9D880">
+		<td width="170px"><a href="http://www.thebeltman.net/www/htdocs/index.htm"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ PINT SLEEVES_files/bullheadsm.jpg" border="0"></a></td>
+		<td><p class="9b" style="margin: 0px 0px 4px 0px">PO Box 1302<br>
+		Apex, NC 27502-1302<br>
+		tel. (919) 387-1997<br>
+		<br>
+		</p><p style="margin: -10px 0px 4px 0px">
+			<script language="javascript">
+			<!-- // Javascript Email Address Encoder
+			var first = 'ma';
+			var second = 'il';
+			var third = 'to:';
+			var address = 'sales';
+			var domain = 'thebeltman';
+			var ext = 'net'; 
+			document.write('<a class="brown9bu" href="');
+			document.write(first+second+third);
+			document.write(address);
+			document.write('&#64;');
+			document.write(domain);
+			document.write('.');
+			document.write(ext);  
+			document.write('">'); 
+			document.write('click to email us</a>');
+			// -->
+			</script><a class="brown9bu" href="mailto:sales@thebeltman.net">click to email us</a>
+		</p><p class="USA"><br><strong>MADE IN THE USA</strong></p>
+		</td>
+		<td class="nopadding" style="text-align: right"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ PINT SLEEVES_files/tools3.jpg"></td>
+	</tr>
+</tbody></table>
+<!-- T2 -->
+<table class="home2">
+	<tbody><tr style="background-color: #C5AE65">
+		<td height="44px"><a href="https://www.cart32hostingred.com/cgi-bin/cart32.exe/thebeltman-itemlist" border="0"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ PINT SLEEVES_files/cart.gif"></a></td>
+		<td style="text-align: center"><p class="white"><strong>ANY QUESTIONS ABOUT YOUR ORDER?<br>Please read our <a class="whiteu" href="http://www.thebeltman.net/www/htdocs/faq.htm">Frequently Asked Questions</a></strong></p></td>
+		<td style="text-align: right"><a class="brown" href="http://www.thebeltman.net/www/htdocs/index.htm" border="0">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/sizing.htm" border="0">Sizing a Belt</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">Customer Service</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	</tr>
+</tbody></table>
+<table class="home3">
+	<tbody><tr valign="top">
+		<td width="170px">
+			<table style="background-color: #E9D880; border: solid 1 #432D16; border-collapse: collapse; margin: -1px 0px 0px 0px;">
+				<tbody><tr>
+					<td class="menuhead">SHOP PRODUCTS
+				</td></tr>
+				<tr>
+					<td class="menubody">
+					BELTS<br>
+						<p style="padding: 5px 0px 0px 10px">Dual-Layer Bullhide Belts:<br>
+						</p><p style="padding: 5px 0px 0px 20px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh114.htm" alt="1-1/4 inch Dual-Layer Bullhide Belts">1-1/4" Width Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 20px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh112.htm" alt="1-1/2 inch Dual-Layer Bullhide Belts">1-1/2" Width Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 20px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh134.htm" alt="1-3/4 inch Dual-Layer Bullhide Belts">1-3/4" Width Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/quick.htm" title="Quick Ship Belts">Quick Ship Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/nobuckle.htm" title="No-Buckle Belts">No-Buckle Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/horse.htm" title="Horse Hide Belts">Horse Hide Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/impress.htm" title="Impression Belts">Impression Belts</a><br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/elephant.htm" title="Elephant Belts">Elephant Belts</a><br>
+						</p><p style="padding: 5px 0px 15px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/buckles.htm" title="Belt Buckles">Belt Buckles</a></p>
+					ACCESSORIES<br>
+						<p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/key.htm" alt="Key Hangers">Deluxe Key Hangers</a>
+						</p><p class="rust" style="padding: 5px 0px 0px 10px">Pint Sleeves<br>
+						</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/coasters.htm" alt="Coasters">Coasters</a>
+						</p><p style="padding: 5px 0px 15px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/preserve.htm" alt="Leather Preservative">Leather Preservative</a>
+					</p></td>
+				</tr>
+				<tr>
+					<td class="menuhead">LEARNING CENTER
+				</td></tr>
+				<tr>
+					<td class="menubody">
+					<p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/aboutb.htm" title="About Our Belts">About Our Belts</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/sizing.htm" title="Sizing a Belt">Sizing a Belt</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="boldred" href="http://www.thebeltman.net/www/htdocs/faq.htm" title="Frequently Asked Questions">Frequently Asked<br>Questions</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/testimonials.htm" title="Testimonials">Testimonials</a><br><br>
+					</p></td>
+				</tr>
+				<tr>
+					<td class="menuhead">COMPANY INFORMATION
+				</td></tr>
+				<tr>
+					<td class="menubody">
+					<p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/about.htm" title="About Us">About Us</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" title="Customer Service">Customer Service</a><br>
+					</p><p style="padding: 5px 0px 0px 10px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/order.htm" title="Ordering &amp; Shipping Info">Ordering &amp; Shipping Info</a><br><br>
+					</p></td>
+				</tr>
+			</tbody></table>
+		<p class="freeship">FREE SHIPPING!!</p>
+		<p class="freeship2">For all Pint Sleeves, Coasters, Buckles, Key Hangers, and Leather Treatment when ordered WITH a belt.</p>
+		<br>
+		<p class="made">SPECIAL ORERS</p>
+		<p class="made2">Don't see what you want here? Call us at 919-387-1997.<br>&nbsp;
+		</p></td>
+		<td colspan="2">
+			<!-- Table2 contains products photos & prices -->
+			<table width="635px">
+				<!-- tr1 -->
+				<tbody><tr>
+					<!-- Table2 spacer columns -->
+					<td width="300px" height="2px">&nbsp;</td>
+					<td width="335px">&nbsp;</td>
+				</tr>
+				<!-- product pint sleeves -->
+				<tr valign="bottom">
+					<td class="cathead" colspan="2"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ PINT SLEEVES_files/pinthead.gif" border="0" alt="Pint Sleeves"></td>
+				</tr>
+				<tr valign="top">
+					<td class="deshead"><a class="brown" href="javascript:popUppintsleeves1(&#39;pintsleeves1lg.htm&#39;)"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ PINT SLEEVES_files/pintsleeves1.jpg" border="0" alt="photo1 of pint sleeves"></a>
+					<br><br>
+					<center><a href="javascript:popUppintsleeves1(&#39;pintsleeves1lg.htm&#39;)"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ PINT SLEEVES_files/viewlarger.jpg" border="0"></a></center>
+					<br>
+					<p>(Colors shown above L to R): BULLHIDE BROWN, BULLHIDE NATURAL, and BULLHIDE BLACK. 
+					<br><br>
+					</p></td>
+					<td class="deshead2"><a class="brown" href="javascript:popUppintsleeves3(&#39;pintsleeves3lg.htm&#39;)"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ PINT SLEEVES_files/pintsleeves3.jpg" border="0" alt="photo3 of pint sleeves"></a>
+					<br><br>
+					<center><a href="javascript:popUppintsleeves3(&#39;pintsleeves3lg.htm&#39;)"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ PINT SLEEVES_files/viewlarger.jpg" border="0"></a></center>
+					<br>
+					<p>(Stamps shown above L to R): GREAT SEAL OF THE USA and SCOTTISH THISTLE.
+					<br><br>
+					</p></td>
+				</tr>
+				<tr>
+					<td class="deshead" colspan="2">
+					<a class="brown" href="javascript:popUppintsleeves2(&#39;pintsleeves2lg.htm&#39;)"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ PINT SLEEVES_files/pintsleeves2.jpg" border="0" alt="photo2 of pint sleeves"></a>
+					<br><br>
+					<p style="padding: 0px 0px 15px 265px"><a href="javascript:popUppintsleeves2(&#39;pintsleeves2lg.htm&#39;)"><img src="./Gun Belts by The Belt Man _ tel. (919) 387-1997 _ PINT SLEEVES_files/viewlarger.jpg" border="0"></a>
+					<br>
+					</p><p>(Shown above L to R): HORSE HIDE NATURAL WITH NO STAMP, SKULL AND CROSS BONES, BELTMAN LOGO, JUMPING BASS, AND CELTIC CROSS. 
+					<br><br><br>
+					</p><p class="warn3">* Pint sleeves ship FREE if ordered WITH a belt.<br>
+					We DO NOT ship pint sleeves overseas unless you are ordering them WITH a belt.<br>
+					If ordering pint sleeves without a belt, USA shipping is $7.00 for any quantity.</p><br>
+					<form onsubmit="return validate_form()" action="https://www.cart32hostingred.com/cgi-bin/cart32.exe/thebeltman-additem" method="post" name="form21" id="form21"><br>
+						<table>
+							<tbody><tr>
+								<td class="options"><p class="b">Color:<br><br></p></td>
+								<td class="options"><p class="7">
+									<select name="p1" id="p1">
+										<option value="Choose a Color" selected="">Choose a Color</option>
+										<option value="Bullhide Natural">Bullhide Natural ($20.00)</option>
+										<option value="Bullhide Brown">Bullhide Brown ($20.00)</option>
+										<option value="Bullhide Black">Bullhide Black ($20.00)</option>
+										<option value="Horsehide Natural">Horsehide Natural ($25.00)</option>
+									</select>
+									<input name="t1" type="hidden" id="t1" value="d-Color;Bullhide Natural:price=+20.00;Bullhide Brown:price=+20.00;Bullhide Black:price=+20.00;Horsehide Natural:price=+25.00;">
+								</p></td>
+							</tr>
+							<tr>
+								<td class="options"><p class="b">Stamp:</p></td>
+								<td class="options"><p>
+									<select name="p2" id="p2">
+									  <option value="Choose a Stamp" selected="">Choose a Stamp</option>
+									  <option value="Blank (no stamp)">Blank (no stamp)</option>
+									  <option value="Skull and Bones">Skull and Bones</option>
+									  <option value="Beltman Logo">Beltman Logo</option>
+									  <option value="Celtic Cross">Celtic Cross</option>
+									  <option value="Jumping Bass">Jumping Bass</option>
+									  <option value="Scottish Thistle">Scottish Thistle</option>
+									  <option value="Great Seal of the USA">Great Seal of the USA</option>
+									</select>
+									<input name="t2" type="hidden" id="t2" value="d-Hardware;Blank (no stamp);Skull and Bones;Beltman Logo;Celtic Cross;Jumping Bass;Scottish Thistle;Great Seal of the USA;">
+								</p></td>
+							</tr>
+							<tr>
+								<td class="options"><p class="b">Quantity:</p></td>
+								<td class="options"><p>
+									<input name="qty" type="text" id="qty" value="1" size="2" maxlength="2">
+								</p></td>
+							</tr>
+							<tr>
+								<td class="options"><p class="b">Price:</p></td>
+								<td class="options"><p class="b">$20.00 each for bullhide; $25.00 each for horse hide</p></td>
+							</tr>
+							<tr>
+								<td valign="top" nowrap="">
+									<input name="Item" type="hidden" id="Item" value="Pint Sleeve">
+									<input type="submit" name="Submit" value="Add to Cart">
+									<input name="weight" type="hidden" id="weight" value="10">
+									<input name="Price" type="hidden" id="Price" value="0">
+								</td>
+							</tr>
+						</tbody></table>
+					</form>
+					<br>
+					<p>You say your pint glass is too cold, wet or slippery to hold? No problem if you have a deluxe BELTMAN leather PINT SLEEVE (or two!!) Convert your standard 16oz. (pint) bar glass into a great-looking mug with a handle and experience old-world nostalgia of class and luxury with a heavy-duty BULLHIDE or HORSE HIDE leather pint sleeve.<br><br>
+					They are made from the same sturdy leather that is used in our belts, and are border-stitched, black-edged, waxed, and lock-screwed together. They should last through many years of serious beer (or iced tea) drinking. This is a BELTMAN original design that you will not find anywhere else.<br><br>
+					We will stamp them with our BELTMAN logo or other fun images at no charge. Bullhide pint sleeves are available in natural, brown or black; or NATURAL horse hide (which mellows nicely with age). They make great gifts too! <a class="brownu" href="http://www.thebeltman.net/www/htdocs/coasters.htm">Matching coasters: $3.00 each.</a><br><br>
+					Glass NOT included! If you are interested in the pint sleeve, you probably already have your own pint glass collection anyway!<br><br><br>
+					</p></td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+	<tr style="background-color: #C5AE65">
+		<td colspan="3" style="text-align: center; border: solid 1 #432D16;" height="75px"><a class="brown" href="http://www.thebeltman.net/www/htdocs/bh114.htm" title="1-1/4 inch Dual-Layer Bullhide Belts">1-1/4" Bullhide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/bh112.htm" title="1-1/2 inch Dual-Layer Bullhide Belts">1-1/2" Bullhide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/bh134.htm" title="1-3/4 inch Dual-Layer Bullhide Belts">1-3/4" Bullhide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/quick.htm" title="Quick Ship Belts">Quick Ship Belts</a><br>
+		<a class="brown" href="http://www.thebeltman.net/www/htdocs/nobuckle.htm" title="No-Buckle Belts">No-Buckle Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/horse.htm" title="Horse Hide Belts">Horse Hide Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/impress.htm" title="Impression Belts">Impression Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/elephant.htm" title="Elephant Belts">Elephant Belts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/buckles.htm" title="Belt Buckles">Buckles</a><br>
+		<a class="brown" href="http://www.thebeltman.net/www/htdocs/key.htm" title="Key Hangers">Key Hangers</a>&nbsp;&nbsp;|&nbsp;&nbsp;<span style="color:#BC7646;">Pint Sleeves</span>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/coasters.htm" title="Coasters">Coasters</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/preserve.htm" title="Leather Preservative">Leather Preservative</a><br>
+		<a class="brown" href="http://www.thebeltman.net/www/htdocs/index.htm" border="0">HOME</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/sizing.htm" border="0">SIZING A BELT</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">CUSTOMER SERVICE</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="brown" href="http://www.thebeltman.net/www/htdocs/cs.htm" border="0">CONTACT US</a>
+		</td>
+	</tr>
+</tbody></table>
+<table width="820px">
+	<tbody><tr>
+		<td style="text-align: center"><br><a class="whiteu" href="http://www.w3des.com/" border="0" target="_blank">Website Designed and Developed by W3Design (www.w3des.com).</a></td>
+	</tr>
+</tbody></table>
+</center>
+
+
+</body></html>
